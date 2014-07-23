@@ -1,0 +1,461 @@
+@import "bootstrap";
+
+@font-face {
+    font-family: 'geared_slabregular';
+    src: url('gearedslab-webfont.eot');
+    src: url('gearedslab-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gearedslab-webfont.woff') format('woff'),
+         url('gearedslab-webfont.ttf') format('truetype'),
+         url('gearedslab-webfont.svg#geared_slabregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+html, body{
+  margin: 0px;
+  position: fixed;
+  padding: 0px;
+  font-size: 4px; 
+  width: 100%; 
+  height: 100%;
+
+  
+
+}
+
+.texture_div img {
+  width: auto;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  path{
+    fill: #e4c52e;
+  }
+}
+
+.circle {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  background: #8b3b3b;
+  display: inline-block;
+  margin: 2em;
+  cursor: pointer;
+  &.hover {
+    border:1em solid #e4c52e;
+  }  
+}
+
+.small_circle_1{
+  background: #8ad2c4;
+}
+.small_circle_2{
+  background: #74baac;
+}
+.small_circle_3{
+  background: #57a697;
+}
+.small_circle_4{
+  background: #338376;
+}
+.small_circle_5{
+  background: #25685e;
+}
+
+.small_circle {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1em;
+  cursor: pointer;
+  color: white;
+  font-family: "geared_slabregular";   
+  min-width: 14px;
+  padding: 4px 3px 0 3px;
+  text-align: center;
+  font-weight: normal;
+  line-height: 2em;
+  font-size: 2em;
+  z-index: 3em;
+}
+
+.content_large {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+}
+
+.content_top {
+  width: 100%;
+  height: 22%;
+  overflow: hidden;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+  top: 1.5em; left: 0; bottom: 0; right: 0;
+  text-align: center;
+}
+
+.content_center {
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+  margin: 0.5em;
+  position: relative;
+  top: -1em; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+
+.content_bottom {
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+  margin: 0.5em;
+  position: relative;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+  z-index: 2;
+}
+footer {
+  width: 100%;
+  height: 11%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  top: -2em; left: 0; bottom: 0; right: 0;
+  text-align: center;
+
+  svg {
+    vertical-align: middle;
+    padding-bottom: 2.8em;
+    display: inline;
+    width: 3.7em ;
+    height: auto;
+    path,rect {
+      fill: #e4c52e;
+    }
+  }
+  address{
+    font-size: 2em;
+    color: #e4c52e ;
+    display: inline;
+  }
+}
+
+
+
+
+
+.content_medium {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.content_start {
+  width: 20em;
+  height: 9em;
+  overflow: hidden;
+  margin: auto;
+  position: absolute;
+  cursor: pointer;
+  top: 2em; left: 0; bottom: 0; right: 0;
+  text-align: center;
+}
+
+.carousel-indicators-hide {
+  visibility: hidden;    
+}
+
+
+.mini_site{
+  .carousel-indicators {
+    margin-left: 0%;      
+  }
+
+  .carousel-inner {
+    height: 100%;   
+  }
+
+  
+  .item{
+     
+    text-align: center;     
+    min-width: 100%; 
+    min-height: 100%; 
+    background: #40b1a3; 
+    position: relative;
+    font-family: "geared_slabregular";
+
+
+    header {
+      width: 100%;
+      height: 6%;
+      overflow: hidden;
+      margin: auto;
+      position: relative;
+      top: 1.5em; left: 0; bottom: 0; right: 0;
+      text-align: center;
+
+      svg {
+        border: 0;
+        vertical-align: middle;
+        padding-bottom: 2.8em;
+        display: inline;
+        width: 3% ;
+        height: auto;
+        path {
+          fill: #e4c52e;
+        }
+
+      }
+    }
+
+
+    h1{
+      font-size: 3em;
+      text-align: center;
+      line-height: 1em;
+      font-weight: normal;
+      margin: 0.5em; 
+    }
+
+    h2{
+      font-weight: normal;
+      line-height: 1em;
+    } 
+
+    section{
+      margin: 0;
+      font-size: 3em;
+      text-align: center;
+   
+    }
+
+    .content_small {
+      width: 100%;
+      height: 36em;
+      overflow: hidden;
+      font-size: 1em;
+      margin: auto;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      text-align: center;
+    }
+
+
+    &.first_slide{
+      
+      background-image: url("/assets/banana_texture.svg") !important;
+      background-size: 7em !important;
+      background-repeat: repeat; 
+
+      .content_small {
+        height: 24em;
+      }
+
+      .content_top {
+        top: 1em;
+      }
+      .content_bottom {
+        top: 5em;
+      }
+
+      h1{
+        font-size: 5em;        
+      }
+
+      footer {
+        top: 2em;
+      }
+
+      section{
+        font-size: 2.8em;
+        color: #e4c52e ; 
+   
+      }
+
+      h3{
+        font-size: 7em;
+        line-height: 1em;
+        color: #e4c52e ;
+        text-shadow: -0.05em -0.02em #2f8376;    
+      }
+
+    }
+
+
+    &.azure{
+
+      .small_circle_1{
+        background: #b45f60;
+      }
+      .small_circle_2{
+        background: #974848;
+      }
+      .small_circle_3{
+        background: #8a3c3d;
+      }
+      .small_circle_4{
+        background: #7b3738;
+      }
+      .small_circle_5{
+        background: #5d2a2b;
+      }
+
+      h1{   
+          color: #e4c52e;
+          font-family: "geared_slabregular";    
+      }
+
+      h2{   
+          color: #fff;          
+          font-family: "geared_slabregular";    
+      }
+    
+      background: #40b1a3;  
+
+      header {
+        svg {     
+          path {
+            fill: #e4c52e;
+          }
+        }
+      }    
+
+    }
+
+    &.red{
+
+      h1{   
+          color: #fffbed;
+          font-family: "geared_slabregular";    
+      }
+
+      h2{   
+          color: #fff;
+          
+          font-family: "geared_slabregular";    
+      }
+
+      background: #8b3b3b;      
+
+      header {
+        svg {     
+          path {
+            fill: #fffbed;
+          }
+        }
+      } 
+    }
+
+    &.yellow{
+      
+      h1{   
+          color: #21685e;
+          font-family: "geared_slabregular";    
+      }
+
+      h2{   
+          color: #fff;
+          
+          font-family: "geared_slabregular";    
+      }
+
+      background: #e4c52e;      
+
+      header {
+        svg {     
+          path {
+            fill: #21685e;
+          }
+        }
+      } 
+
+    }
+
+    &.green{
+      
+      h1{   
+          color: #e4c52e;
+          font-family: "geared_slabregular";    
+      }
+
+      h2{   
+          color: #fff;
+          
+          font-family: "geared_slabregular";    
+      }
+
+      background: #21685e;      
+
+      header {
+        svg {     
+          path {
+            fill: #e4c52e;
+          }
+        }
+      } 
+
+    }
+
+  }
+
+}
+
+@media only screen 
+and (min-height: 385px){
+  html, body{
+    font-size: 6px; 
+  }
+}
+@media only screen 
+and (min-height: 500px) and (min-width: 420px){
+  html, body{
+    font-size: 8px; 
+  }
+}
+
+@media only screen 
+and (min-height: 600px) and (min-width: 525px){
+  html, body{
+    font-size: 10px; 
+  }
+}
+
+@media only screen 
+and (min-height: 720px) and (min-width: 630px){
+  html, body{
+    font-size: 12px; 
+  }
+}
+
+@media only screen 
+and (min-height: 840px) and (min-width: 720px){
+  html, body{
+    font-size: 14px; 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

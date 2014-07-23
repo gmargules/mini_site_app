@@ -1,5 +1,12 @@
 MiniSiteApp::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+  root  'mini_site#home'
+  match '/home',   to: 'mini_site#home',  via: 'get'
+  match '/index',   to: 'mini_site#index',  via: 'get'
+  match '/answer',  to: 'mini_site#answer', via: 'post'
+  match '/grades',  to: 'mini_site#grades', via: 'post'
+
+   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
