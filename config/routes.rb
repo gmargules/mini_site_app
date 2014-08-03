@@ -1,5 +1,7 @@
 MiniSiteApp::Application.routes.draw do
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root  'mini_site#home'
   match '/home',   to: 'mini_site#home',  via: 'get'
   match '/index',   to: 'mini_site#index',  via: 'get'

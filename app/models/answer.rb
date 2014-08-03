@@ -6,6 +6,7 @@
 #  user_id        :integer
 #  question_id    :integer
 #  response_value :integer
+#  user_version   :integer
 #  created_at     :datetime
 #  updated_at     :datetime
 #

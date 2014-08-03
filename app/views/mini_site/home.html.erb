@@ -1,25 +1,10 @@
-<!--<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", home_path, class: "btn btn-large btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
-<title>Example of Twitter Bootstrap 3 Carousel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+<title>Mini Site Questionnaire</title>
 
 
 </head>
@@ -27,22 +12,23 @@
 	<div class="texture_div">
 		<img src="/assets/yellow_texture.png">
 	</div> 
+    <div id="data_container" data-user_id=""></div>
     <div id="myCarousel" class="carousel mini_site" data-interval="false" data-ride="carousel" style="width:100%; height:100%; position:absolute; left:0;top:0;overflow:hidden;">
-
-       <!-- Carousel items -->
-       
-
         <div class="carousel-inner">
-        	<div class="item active first_slide azure">            	
-            	<div class="content_large">
+        	<div class="item first_slide azure active">            	
+            	<div class="content_large" id="outter_container_first_slide">
             		<div class="content_top">
     	        		<h1>Are you ready for success?</h1>
     	        	</div>
-    	        	<div class="content_center">
-            			<div class="content_small">
-            				<div class="circle" id="first_slide_circle" href="#myCarousel" data-slide="next"></div>		
-            			</div>	
-            			<div class="content_start" href="#myCarousel" data-slide="next">
+    	        	<div class="content_center" id="central_container_first_slide">
+                        
+            			<div class="content_small" id="content_small_circle">
+                            <div class="circle" id="first_slide_circle"></div>     
+                        </div>
+                        <div class="content_small" id="content_small_circle_2">
+                            <div class="circle_2" id="first_slide_circle_2"></div>     
+                        </div>	
+            			<div class="content_start">
             				<h3>START</h3>	
             			</div>
     				</div>
@@ -56,28 +42,61 @@
     			</div> 	             
             </div>
         	<% @questions.each_with_index do |question,i| %>
-            <div class="item <%=question.style%>">            	
+           
+            <div class="item <%=question.style%>" data-grade_type=<%=question.grade_type%> data-weight=<%=question.weight%>>            	
             	<div class="content_large">
                     <header id="bananas_header">
-                        <svg id="banana_svg_<%=i%>">                        
-                            <%=render "banana.svg"%>
-                        </svg>
+                        <div class="content_of_header">
+                            <div class="content_page_number">
+                                <address><%=i+1%>/30</address>
+                            </div>
+                            
+                            <div class="content_medium">
+                                <svg id="banana_svg_<%=i%>_0">                        
+                                    <%=render "banana.svg"%>
+                                </svg>
+                            </div>
+                        </div>
                     </header>
                     <div class="content_top">
                         <h1><%=question.content%></h1>
+                        <canvas id="myCanvas_<%=question.id%>" width="200" height="200" style="visibility: hidden;">
+                            Sorry! your browswer does not support canvs.
+                        </canvas>
                     </div>
                     <div class="content_center">
-                        <div class="content_small">
-                            <video id="myVideo_<%=question.id%>" src="/assets/<%=question.video_filename%>" autoplay loop video width="40%" height="70%" style="margin: 6em;"> 
+                        <div class="content_small" id="video_container_<%=question.id%>">
+
+                            <video id="myVideo_<%=question.id%>" autoplay loop width="100%" height="80%" audio="muted" preload>
+                             <source src="/assets/<%=question.video_filename%>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> 
+                             <source src="/assets/<%=question.video_filename%>.webm" type='video/webm; codecs="vp8, vorbis"'> 
+                             <source src="/assets/<%=question.video_filename%>.ogv" type='video/ogg; codecs="theora, vorbis"'> 
+                            </video>    
                         </div>  
                     </div>
                     <div class="content_bottom"> 
-                        <div class="small_circles_content"> 
-                            <div class="small_circle small_circle_1" href="#myCarousel" data-slide="next">1</div>
-                            <div class="small_circle small_circle_2" href="#myCarousel" data-slide="next">2</div>
-                            <div class="small_circle small_circle_3" href="#myCarousel" data-slide="next">3</div>
-                            <div class="small_circle small_circle_4" href="#myCarousel" data-slide="next">4</div>
-                            <div class="small_circle small_circle_5" href="#myCarousel" data-slide="next">5</div>      
+                        <div class="small_circles_content">
+                            <div class="content_of_small_circle_h2">
+                                <h2>Have no idea</h2>
+                            </div>
+                            <div class="content_of_small_circle">
+                                <div class="small_circle small_circle_1" href="#myCarousel" data-slide="next">1</div>
+                            </div>
+                            <div class="content_of_small_circle"> 
+                                <div class="small_circle small_circle_2" href="#myCarousel" data-slide="next">2</div>
+                            </div>
+                            <div class="content_of_small_circle">
+                                <div class="small_circle small_circle_3" href="#myCarousel" data-slide="next">3</div>
+                            </div>
+                            <div class="content_of_small_circle">
+                                <div class="small_circle small_circle_4" href="#myCarousel" data-slide="next">4</div>
+                            </div>
+                            <div class="content_of_small_circle">
+                                <div class="small_circle small_circle_5" href="#myCarousel" data-slide="next">5</div>
+                            </div>
+                            <div class="content_of_small_circle_h2">      
+                            <h2>Know for sure</h2>
+                            </div>  
                         </div>
                     </div>
                     <footer>
@@ -87,6 +106,39 @@
                 </div>                
             </div>
             <% end %>
+            <div class="item last_slide azure ">             
+                <div class="content_large">
+                    <div class="content_top">
+                        <h1>How ready are you?</h1>
+                    </div>
+                    <div class="content_center">
+                        <div class="content_small">
+                            <div style="width:100%; height: 100%; position:absolute; z-index: 3;">
+                                <canvas id="my_lines_canvas"></canvas>
+                            </div>
+                            <div style="width:100%; height: 100%; position:absolute; ">
+                                <input class='knob1' data-fgColor="#e1cb34" data-thickness='.4' data-readonly='true' type='text' value='100' >
+                            </div>
+                            <div style="width:100%; height: 100%; position:absolute;">
+                                <input class='knob2' data-fgColor="#974848" data-thickness='.4' data-readonly='true' type='text' value='100' data-displayInput="false">
+                            </div>
+                            <div style="width:100%; height: 100%; position:absolute;">
+                                <input class='knob3' data-fgColor="#86313d" data-thickness='.4' data-readonly='true' type='text' value='100' data-displayInput="false">
+                            </div>
+                            <div style="width:100%; height: 100%; position:absolute;">
+                                <input class='knob4' data-fgColor="#215648" data-thickness='.4' data-readonly='true' type='text' value='100' data-displayInput="false">
+                            </div>
+                            
+                        </div>  
+                    </div>
+                    <div class="content_bottom">   
+                        <section>You can use some help, press on the monkey!</section>
+                    </div>
+                    <footer>
+                        <%=render "powered_by.svg"%>
+                    </footer>
+                </div>               
+            </div>
         </div>
         <!-- Carousel nav 
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">

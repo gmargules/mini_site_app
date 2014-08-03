@@ -11,12 +11,13 @@ end
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'annotate'
-
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.1'
-gem 'bootstrap-sass', '2.3.2.0'
-gem 'sprockets', '2.11.0'
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'sprockets'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
 

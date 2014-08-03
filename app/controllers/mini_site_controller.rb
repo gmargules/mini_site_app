@@ -12,7 +12,7 @@ class MiniSiteController < ApplicationController
 
 
   def answer
-    @answer = Answer.new(@user.id, params[:question_id], params[:response_value])
+    @answer = @user.answers.new(question_id: params[:question_id], response_value: params[:response_value], user_version: params[:user_version])
       if @answer.save
         update_question_response_duration
       else
@@ -32,7 +32,7 @@ class MiniSiteController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def get_user
-      User.find_or_create_by(id: params[:user_id])
+      @user = User.find_or_create_by(id: params[:user_id])
     end
 
     def get_question
@@ -40,10 +40,9 @@ class MiniSiteController < ApplicationController
     end
 
     def update_question_response_duration
-      	recieved_response_duration = params[:response_duration]
-        @question.averege_response_time = (@question.averege_response_time * @question.averege_response_counter +
-          recieved_response_duration) / (@question.averege_response_counter + 1)
-        @question.averege_response_counter += 1
+      	recieved_response_duration = Integer(params[:response_duration], 10)
+        @question.average_response_time = (@question.average_response_time * @question.average_response_counter + recieved_response_duration) / (@question.average_response_counter + 1)
+        @question.average_response_counter = @question.average_response_counter + 1
         @question.save
     end
 
