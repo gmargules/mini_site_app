@@ -1,5 +1,14 @@
 ActiveAdmin.register Question do
-
+  form do |f|
+    f.inputs do
+      f.input :contnet
+      f.input :style
+      f.input :weight
+      f.input :grade_type
+      f.input :file_name
+    end
+    f.actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
