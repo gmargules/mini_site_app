@@ -8,15 +8,9 @@ ActiveAdmin.register Question do
   #
   # or
   #
-  # permit_params do
+  permit_params do
   #  permitted = [:permitted, :attributes]
   #  permitted << :other if resource.something?
-  #  permitted
-  # end
-
-  controller do
-    def permit_params
-      params.permit!
-    end
+     permitted
   end
 end
