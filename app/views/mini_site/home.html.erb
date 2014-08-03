@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="texture_div">
-		<img src="/assets/yellow_texture.png">
+		<img class="texture_image_class_yellow" id="myTexture">
 	</div> 
     <div id="data_container" data-user_id=""></div>
     <div id="myCarousel" class="carousel mini_site" data-interval="false" data-ride="carousel" style="width:100%; height:100%; position:absolute; left:0;top:0;overflow:hidden;">
@@ -66,12 +66,12 @@
                     </div>
                     <div class="content_center">
                         <div class="content_small" id="video_container_<%=question.id%>">
-
-                            <video id="myVideo_<%=question.id%>" autoplay loop width="100%" height="80%" audio="muted" preload>
+                            <%video_tag(["#{question.video_filename}.mp4", "#{question.video_filename}.webm", "#{question.video_filename}.ogv"], id: 'myVideo_#{question.id}', preload: true, loop: true, width: '100%', height: '80%', audio: 'muted')%>
+                        <!--    <video id="myVideo_#{question.id}" preload loop width="100%" height="80%" audio="muted" >
                              <source src="/assets/<%=question.video_filename%>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> 
                              <source src="/assets/<%=question.video_filename%>.webm" type='video/webm; codecs="vp8, vorbis"'> 
                              <source src="/assets/<%=question.video_filename%>.ogv" type='video/ogg; codecs="theora, vorbis"'> 
-                            </video>    
+                            </video>    -->
                         </div>  
                     </div>
                     <div class="content_bottom"> 

@@ -53,7 +53,7 @@ $(document).ready(function () {
       next_item_number=number+1;
       video = document.getElementById("myVideo_"+next_item_number);
       if(video != null){
-        video.addEventListener('onloaded', function() { this.play(); } );
+        //video.addEventListener('onloaded', function() { this.play(); } );
         context = document.getElementById("myCanvas_"+next_item_number).getContext("2d");
         context.drawImage(video, 0, 0, 1, 1);
         pixelData = context.getImageData(0, 0, 1, 1).data;
@@ -72,12 +72,14 @@ $(document).ready(function () {
       $('.item footer').addClass('not_hidden_class');
 
     }
+    change_texture();
     //TODO add animation
     $('.circle_2, .content_start').hide("scale");
     $('.circle').hide("scale",function(){
       $('#myCarousel').carousel('next');
       $('#myCarousel').carousel('pause');
     });
+    play_video('1');
   }) 
 });
 
@@ -122,13 +124,16 @@ $(document).ready(function () {
       if ( $('div.item').last().is($('div.active').next())){
         calc_grades();
       }
+      else{
+        play_video(question_id+1);
+      }
 
 			$.ajax({
 			    url : "answer",
 			    type: "POST",
 			    data : params
 			});
-
+      change_texture();
 		}
 	)
 });
@@ -157,7 +162,27 @@ $(document).ready(function (){
   });
 });
 
+function play_video(next_item_number){
+  video = document.getElementById("myVideo_"+next_item_number);
+      if(video != null){
+        video.play();
+      }
+}
 
+function change_texture(){
+  next_page_backgound_is_yellow = $('.active').next().hasClass('yellow');
+  current_texture_is_yellow = $('#myTexture').hasClass('texture_image_class_yellow');
+  console.log(next_page_backgound_is_yellow);
+  console.log(current_texture_is_yellow);
+  if(next_page_backgound_is_yellow && current_texture_is_yellow){
+    $('#myTexture').addClass('texture_image_class_blue')
+    $('#myTexture').removeClass('texture_image_class_yellow')
+  }
+  if(!current_texture_is_yellow && !next_page_backgound_is_yellow){
+    $('#myTexture').addClass('texture_image_class_yellow')
+    $('#myTexture').removeClass('texture_image_class_blue')
+  }
+}
 
 
 function calc_grades(){

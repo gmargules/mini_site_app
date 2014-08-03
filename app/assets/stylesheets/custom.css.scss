@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'geared_slabregular';
-    src: url('gearedslab-webfont.eot');
-    src: url('gearedslab-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gearedslab-webfont.woff') format('woff'),
-         url('gearedslab-webfont.ttf') format('truetype'),
-         url('gearedslab-webfont.svg#geared_slabregular') format('svg');
+    src:  url(font-path('gearedslab-webfont.eot'));
+    src:  url(font-path('gearedslab-webfont.eot?#iefix')) format('embedded-opentype'),
+          url(font-path('gearedslab-webfont.woff')) format('woff'),
+          url(font-path('gearedslab-webfont.ttf')) format('truetype'),
+          url(font-path('gearedslab-webfont.svg#geared_slabregular')) format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -14,6 +14,13 @@
 
 #data_container{
   visibility: hidden;
+}
+
+.texture_image_class_yellow{
+    content: asset_url('yellow_texture.png');
+}
+.texture_image_class_blue{
+    content: asset_url('blue_texture.png');
 }
 
 html, body{
@@ -193,7 +200,8 @@ html, body{
 
 .small_circle_on_hover{
   border-style: solid;
-  padding: 1px;
+  padding: 0px;
+  border-width: 0.15em;
 }
 
 .mini_site{
