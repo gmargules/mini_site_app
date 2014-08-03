@@ -2,10 +2,10 @@ ActiveAdmin.register Question do
   form do |f|
     f.inputs do
       f.input :content
-
       f.input :weight
       f.input :grade_type
       f.input :video_filename
+      f.input :style
     end
     f.actions
   end
