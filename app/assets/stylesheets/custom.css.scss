@@ -34,7 +34,7 @@ html, body{
 
 .small_circles_content{
   
-  width: 85%;
+  width: 95%;
   height: 95%;
   overflow: hidden;
   margin: auto;
@@ -111,16 +111,16 @@ html, body{
 }
 
 .small_circle {
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   position: absolute;
   margin: 0.5em;
   cursor: pointer;
   color: white;
   font-family: "geared_slabregular";   
-  min-width: 14px;
-  padding: 4px 3px 0 3px;
+  //min-width: 14px;
+  padding: 0.5em 0 0 0;
   text-align: center;
   font-weight: normal;
   line-height: 2em;
@@ -187,15 +187,18 @@ html, body{
 
 
 .content_of_small_circle {
-  width: 6em;
-  height: 6em;
+  width: 10em;
+  height: 8em;
   display: inline-block;
   position: relative;
 }
 .content_of_small_circle_h2 {
   display: inline-block;
   position: relative;
+  height: 8em;
   top: -2em;
+  vertical-align: middle;
+  padding-right: 2em;
 }
 
 .small_circle_on_hover{
@@ -347,7 +350,7 @@ html, body{
 
       .content_top {
         top: 1em;
-        height: 23%;
+        height: 25%;
       }
 
       .content_center {
@@ -367,7 +370,7 @@ html, body{
       }
 
       h1{
-        font-size: 5em;        
+        font-size: 7em;        
       }
 
       footer {
@@ -375,7 +378,7 @@ html, body{
       }
 
       section{
-        font-size: 2.8em;
+        font-size: 4em;
         color: #e4c52e ; 
    
       }
@@ -602,7 +605,7 @@ and (min-height: 385px){
   }
 }
 @media only screen 
-and (min-height: 500px) and (min-width: 460px){
+and (min-height: 500px) and (min-width: 640px){
   html, body{
     font-size: 8px; 
   }
@@ -612,7 +615,7 @@ and (min-height: 500px) and (min-width: 460px){
 }
 
 @media only screen 
-and (min-height: 600px) and (min-width: 565px){
+and (min-height: 600px) and (min-width: 790px){
   html, body{
     font-size: 10px; 
   }
@@ -625,7 +628,7 @@ and (min-height: 600px) and (min-width: 565px){
 }
 
 @media only screen 
-and (min-height: 720px) and (min-width: 670px){
+and (min-height: 720px) and (min-width: 950px){
   html, body{
     font-size: 12px; 
   }
@@ -635,7 +638,7 @@ and (min-height: 720px) and (min-width: 670px){
 }
 
 @media only screen 
-and (min-height: 840px) and (min-width: 780px){
+and (min-height: 840px) and (min-width: 1120px){
   html, body{
     font-size: 14px; 
   }
