@@ -14,5 +14,9 @@ ActiveAdmin.register Question do
   #  permitted
   # end
 
-
+  controller do
+    permit_params do
+      params.permit!
+    end
+  end
 end
