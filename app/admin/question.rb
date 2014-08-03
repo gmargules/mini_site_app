@@ -5,7 +5,7 @@ ActiveAdmin.register Question do
       f.input :style
       f.input :weight
       f.input :grade_type
-      f.input :file_name
+      f.input :video_filename
     end
     f.actions
   end
