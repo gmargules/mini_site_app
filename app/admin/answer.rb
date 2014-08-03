@@ -1,7 +1,7 @@
 ActiveAdmin.register Answer do
 
   controller do
-    permit_params do
+    def permit_params
       params.permit!
     end
   end
