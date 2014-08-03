@@ -172,8 +172,6 @@ function play_video(next_item_number){
 function change_texture(){
   next_page_backgound_is_yellow = $('.active').next().hasClass('yellow');
   current_texture_is_yellow = $('#myTexture').hasClass('texture_image_class_yellow');
-  console.log(next_page_backgound_is_yellow);
-  console.log(current_texture_is_yellow);
   if(next_page_backgound_is_yellow && current_texture_is_yellow){
     $('#myTexture').addClass('texture_image_class_blue')
     $('#myTexture').removeClass('texture_image_class_yellow')
