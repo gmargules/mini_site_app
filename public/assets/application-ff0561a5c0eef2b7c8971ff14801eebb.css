@@ -11203,19 +11203,19 @@ html, body {
 
 /* line 113, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .small_circle {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 50%;
   position: absolute;
   margin: 0.5em;
   cursor: pointer;
   color: white;
   font-family: "geared_slabregular";
-  padding: 0.6em 0 0 0;
+  padding: 0.4em 0 0 0;
   text-align: center;
   font-weight: normal;
   line-height: 2em;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 /* line 130, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
@@ -11314,8 +11314,8 @@ html, body {
 /* line 204, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .small_circle_on_hover {
   border-style: solid;
-  border-width: 0.15em;
-  padding-top: 0.45em;
+  border-width: 0.2em;
+  padding-top: 0.2em;
 }
 
 /* line 211, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
@@ -11433,21 +11433,22 @@ html, body {
 }
 /* line 311, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: normal;
   line-height: 1em;
   display: inline-block;
   position: absolute;
   top: 3em;
   left: 0;
+  width: 5em;
 }
-/* line 321, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 323, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item section {
   margin: 0;
   font-size: 3em;
   text-align: center;
 }
-/* line 328, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 330, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item .content_small {
   width: 100%;
   height: 40em;
@@ -11461,73 +11462,73 @@ html, body {
   right: 0;
   text-align: center;
 }
-/* line 342, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 344, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide {
   background-image: url("/assets/banana_texture.svg") !important;
   background-size: 7em !important;
   background-repeat: repeat;
 }
-/* line 348, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 350, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide .content_small {
   height: 24em;
   top: 0em;
 }
-/* line 353, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 355, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide .content_top {
   top: 1em;
   height: 25%;
 }
-/* line 358, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 360, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide .content_center {
   margin: 0.5em;
 }
-/* line 362, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 364, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide .content_bottom {
   top: 3em;
   height: 20%;
   padding-bottom: 0;
 }
-/* line 368, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 370, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide .content_medium {
   width: 100%;
   height: 50%;
   position: relative;
 }
-/* line 374, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 376, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide h1 {
   font-size: 7em;
 }
-/* line 378, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 380, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide footer {
   top: 4em;
 }
-/* line 382, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 384, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide section {
   font-size: 4em;
   color: #e4c52e;
 }
-/* line 388, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 390, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.first_slide h3 {
   font-size: 7em;
   line-height: 0.2em;
   color: #e4c52e;
   text-shadow: -0.05em -0.02em #2f8376;
 }
-/* line 399, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 401, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide .content_small {
   height: 100%;
   top: 0;
 }
-/* line 408, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 410, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide .content_center {
   height: 54%;
   top: 0;
 }
-/* line 413, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 415, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide .content_bottom {
   top: 3em;
 }
-/* line 425, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 427, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide footer {
   width: 95%;
   height: 10em;
@@ -11535,221 +11536,242 @@ html, body {
   top: -7em;
   z-index: 3;
 }
-/* line 432, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 434, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide footer svg {
   width: 10em;
   float: right;
 }
-/* line 438, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 440, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.last_slide section {
   font-size: 2.8em;
   color: #e4c52e;
 }
-/* line 450, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 452, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure {
   background: #4bbea4;
 }
-/* line 452, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 454, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure .small_circle_1 {
   background: #b45f60;
 }
-/* line 455, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 457, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure .small_circle_2 {
   background: #974848;
 }
-/* line 458, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 460, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure .small_circle_3 {
   background: #8a3c3d;
 }
-/* line 461, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 463, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure .small_circle_4 {
   background: #7b3738;
 }
-/* line 464, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 466, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure .small_circle_5 {
   background: #5d2a2b;
 }
-/* line 468, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 470, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure h1 {
   color: #e4c52e;
   font-family: "geared_slabregular";
 }
-/* line 473, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 475, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure h2 {
   color: #fff;
   font-family: "geared_slabregular";
 }
-/* line 481, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 483, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure header address, .mini_site .item.azure footer address {
   color: #e4c52e;
 }
-/* line 485, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 487, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.azure header svg path, .mini_site .item.azure header svg rect, .mini_site .item.azure footer svg path, .mini_site .item.azure footer svg rect {
   fill: #e4c52e;
 }
-/* line 493, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 495, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.red {
   background: #85313B;
 }
-/* line 495, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 497, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.red h1 {
   color: #fffbed;
   font-family: "geared_slabregular";
 }
-/* line 500, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 502, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.red h2 {
   color: #fffbed;
   font-family: "geared_slabregular";
 }
-/* line 509, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 511, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.red header address, .mini_site .item.red footer address {
   color: #fffbed;
 }
-/* line 513, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 515, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.red header svg path, .mini_site .item.red header svg rect, .mini_site .item.red footer svg path, .mini_site .item.red footer svg rect {
   fill: #fffbed;
 }
-/* line 520, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 522, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.yellow {
   background: #e1cb34;
 }
-/* line 522, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 524, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.yellow h1 {
   color: #21685e;
   font-family: "geared_slabregular";
 }
-/* line 527, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 529, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.yellow h2 {
   color: #21685e;
   font-family: "geared_slabregular";
 }
-/* line 536, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 538, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.yellow header address, .mini_site .item.yellow footer address {
   color: #21685e;
 }
-/* line 540, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 542, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.yellow header svg path, .mini_site .item.yellow header svg rect, .mini_site .item.yellow footer svg path, .mini_site .item.yellow footer svg rect {
   fill: #21685e;
 }
-/* line 548, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 550, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green {
   background: #215648;
 }
-/* line 550, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 552, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green .small_circle_1 {
   background: #b45f60;
 }
-/* line 553, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 555, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green .small_circle_2 {
   background: #974848;
 }
-/* line 556, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 558, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green .small_circle_3 {
   background: #8a3c3d;
 }
-/* line 559, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 561, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green .small_circle_4 {
   background: #7b3738;
 }
-/* line 562, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 564, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green .small_circle_5 {
   background: #5d2a2b;
 }
-/* line 566, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 568, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green h1 {
   color: #e4c52e;
   font-family: "geared_slabregular";
 }
-/* line 571, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 573, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green h2 {
   color: #e4c52e;
   font-family: "geared_slabregular";
 }
-/* line 580, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 582, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green header address, .mini_site .item.green footer address {
   color: #e4c52e;
 }
-/* line 584, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+/* line 586, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
 .mini_site .item.green header svg path, .mini_site .item.green header svg rect, .mini_site .item.green footer svg path, .mini_site .item.green footer svg rect {
   fill: #e4c52e;
 }
 
 @media only screen and (min-height: 385px) {
-  /* line 598, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 600, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html, body {
     font-size: 6px;
   }
 
-  /* line 601, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 604, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .content_start {
     top: -1em;
   }
 
-  /* line 605, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 608, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .mini_site .item.first_slide h3 {
     line-height: 0.5em;
   }
 }
 @media only screen and (min-height: 450px) and (min-width: 580px) {
-  /* line 611, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 614, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html, body {
     font-size: 8px;
   }
 
-  /* line 614, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 617, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .content_start {
     top: 0;
   }
 }
 @media only screen and (min-height: 550px) and (min-width: 720px) {
-  /* line 621, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 624, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html, body {
     font-size: 10px;
   }
 
-  /* line 624, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 628, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .content_start {
     top: 0;
   }
 
-  /* line 627, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 631, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .mini_site .item.first_slide h3 {
     line-height: 0.7em;
   }
 }
 @media only screen and (min-height: 800px) and (min-width: 720px) {
-  /* line 634, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 638, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html, body {
     font-size: 12px;
   }
 
-  /* line 637, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 642, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  .small_circle {
+    width: 2em;
+    height: 2em;
+    padding: 0.15em 0 0 0;
+    font-size: 2em;
+  }
+
+  /* line 649, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  h2 {
+    font-size: 2em;
+    top: 2em !important;
+  }
+
+  /* line 654, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  .small_circle_on_hover {
+    border-style: solid;
+    border-width: 0.2em;
+    padding-top: 0;
+  }
+
+  /* line 660, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .content_start {
     top: 0;
   }
 }
 @media only screen and (min-height: 800px) and (min-width: 1020px) {
-  /* line 644, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 667, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html, body {
     font-size: 14px;
   }
 
-  /* line 647, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 670, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .content_start {
     top: 0;
   }
 
-  /* line 650, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 673, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   .mini_site .item.first_slide h3 {
     line-height: 0.9em;
   }
 }
 @media only screen and (min-height: 400px) and (min-width: 900px) {
-  /* line 659, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 682, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html .texture_div img, body .texture_div img {
     visibility: visible !important;
   }
-  /* line 662, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
+  /* line 685, /Users/Gai/rails_projects/mini_site_app/app/assets/stylesheets/custom.css.scss */
   html .content_of_header, body .content_of_header {
     visibility: visible !important;
   }
