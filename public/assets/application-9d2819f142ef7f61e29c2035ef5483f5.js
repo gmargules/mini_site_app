@@ -22309,9 +22309,7 @@ $(document).ready(function () {
   $('.first_slide .circle,.first_slide .content_start').one("click",function(){
     //play first four videos
     play_video("1");
-    play_video("2");
-    play_video("3");
-    play_video("4");
+
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header .content_medium');
     var banana_item = bananas_container_array.eq(0).find('#banana_svg_0_0');
@@ -22352,12 +22350,31 @@ $(document).ready(function () {
 
     }
     change_texture();
+    $('.circle_2').removeClass('not_hidden_class')
+    $('.content_start, .first_slide h1, section').hide("scale");
 
-    $('.circle_2, .content_start').hide("scale");
-    $('.circle').hide("scale",function(){
+    circle_half_px= $('.circle').css('width');
+    circle_relative_size = parseInt(circle_half_px, 10)/10;
+
+    $('.circle').css("top",$('.circle').offset().top- circle_relative_size);
+    $('.circle').css('left',$('.circle').offset().left- circle_relative_size);
+    $('.circle').css("position","absolute");
+    
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    var max_width_height=Math.max(windowWidth,windowHeight)
+    ;
+    var element = $('.circle').detach();
+    $('.first_slide').append(element);
+      $('.circle').animate({ width:max_width_height*2, height:max_width_height*2, top:windowHeight-(Math.sqrt(2)*max_width_height),  left:windowWidth-(Math.sqrt(2)*max_width_height)}, 1000).promise().done(function () {
+        $('#myCarousel').carousel('next');
+        $('#myCarousel').carousel('pause');
+    });
+
+    /*$('.circle').hide("scale",function(){
       $('#myCarousel').carousel('next');
       $('#myCarousel').carousel('pause');
-    });
+    });*/
     
     }) 
 });
@@ -22404,8 +22421,7 @@ $(document).ready(function () {
         calc_grades();
       }
       else{
-        console.log(question_id+4);
-        play_video(question_id+4);    
+        play_video(question_id+1);    
       }
 
 			$.ajax({
@@ -22447,14 +22463,6 @@ function play_video(item_number){
   if(video != null){
     video.play();
   }
-}
-
-function load_video(item_number){
-  video = document.getElementById("myVideo_"+item_number);
-  if(video != null){
-    video.load();
-  }
-
 }
 
 function change_texture(){
