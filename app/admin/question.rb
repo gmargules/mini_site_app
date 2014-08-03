@@ -2,7 +2,7 @@ ActiveAdmin.register Question do
   form do |f|
     f.inputs do
       f.input :content
-      f.input :style
+
       f.input :weight
       f.input :grade_type
       f.input :video_filename
