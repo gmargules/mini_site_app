@@ -22291,15 +22291,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  var last_slide_number = $('div.item').index($('div.item').last()[0]);
-  for ( var i = 1; i < last_slide_number; i++ ) {
-    var video = document.getElementById("myVideo_"+i);
-    
-  }
-
-});
-
-$(document).ready(function () {
   $('.first_slide .circle,.first_slide .content_start').hover(
          function(){ $('.circle_2').addClass('not_hidden_class') },
          function(){ $('.circle_2').removeClass('not_hidden_class') }
@@ -22316,11 +22307,15 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.first_slide .circle,.first_slide .content_start').one("click",function(){
+    //play first four videos
+    play_video("1");
+    play_video("2");
+    play_video("3");
+    play_video("4");
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header .content_medium');
     var banana_item = bananas_container_array.eq(0).find('#banana_svg_0_0');
     var i, context, pixelData, number, video, bananas_container, returned_item;
-    
     for (number = 0; number<$('div.item').index($('div.item').last()[0])-1;number++){
       bananas_container = bananas_container_array.eq(number);
       
@@ -22343,6 +22338,7 @@ $(document).ready(function () {
         $('.active').next().css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
       }
     }
+
     //handle variables hande fade of start button 
     myLastDate = new Date();
     grade_concept = 0;
@@ -22356,14 +22352,14 @@ $(document).ready(function () {
 
     }
     change_texture();
-    //TODO add animation
+
     $('.circle_2, .content_start').hide("scale");
     $('.circle').hide("scale",function(){
       $('#myCarousel').carousel('next');
       $('#myCarousel').carousel('pause');
     });
-    play_video('1');
-  }) 
+    
+    }) 
 });
 
 
@@ -22408,7 +22404,8 @@ $(document).ready(function () {
         calc_grades();
       }
       else{
-        play_video(question_id+1);
+        console.log(question_id+4);
+        play_video(question_id+4);    
       }
 
 			$.ajax({
@@ -22445,18 +22442,24 @@ $(document).ready(function (){
   });
 });
 
-function play_video(next_item_number){
-  video = document.getElementById("myVideo_"+next_item_number);
-      if(video != null){
-        video.play();
-      }
+function play_video(item_number){
+  video = document.getElementById("myVideo_"+item_number);
+  if(video != null){
+    video.play();
+  }
+}
+
+function load_video(item_number){
+  video = document.getElementById("myVideo_"+item_number);
+  if(video != null){
+    video.load();
+  }
+
 }
 
 function change_texture(){
   next_page_backgound_is_yellow = $('.active').next().hasClass('yellow');
   current_texture_is_yellow = $('#myTexture').hasClass('texture_image_class_yellow');
-  console.log(next_page_backgound_is_yellow);
-  console.log(current_texture_is_yellow);
   if(next_page_backgound_is_yellow && current_texture_is_yellow){
     $('#myTexture').addClass('texture_image_class_blue')
     $('#myTexture').removeClass('texture_image_class_yellow')
