@@ -70,7 +70,7 @@ $(document).ready(function () {
     }
     change_texture();
     $('.circle_2').removeClass('not_hidden_class')
-    $('.content_start, .first_slide h1, section').hide("scale");
+    $('.content_start, .first_slide h1, .first_slide section').hide("scale");
 
     circle_half_px= $('.circle').css('width');
     circle_relative_size = parseInt(circle_half_px, 10)/10;
@@ -89,13 +89,8 @@ $(document).ready(function () {
         $('#myCarousel').carousel('next');
         $('#myCarousel').carousel('pause');
     });
-
-    /*$('.circle').hide("scale",function(){
-      $('#myCarousel').carousel('next');
-      $('#myCarousel').carousel('pause');
-    });*/
     
-    }) 
+  }) 
 });
 
 
@@ -190,14 +185,18 @@ function play_video(item_number){
 function restart_video(item_number){
   video = document.getElementById("myVideo_"+item_number);
   if(video != null){
-    video.currentTime = 0;
+    if(video.readyState == 4){//only if video is loaded
+      video.currentTime = 0;
+    }
   }
 }
 
 function pause_video(item_number){
   video = document.getElementById("myVideo_"+item_number);
   if(video != null){
-    video.pause();
+    //if(video.readyState == 4){//only if video is loaded
+      video.pause();
+    //}
   }
 }
 

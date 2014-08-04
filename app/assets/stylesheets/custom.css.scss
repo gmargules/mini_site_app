@@ -265,7 +265,7 @@ html, body{
         width: 85%;
         height: 95%;
         overflow: hidden;
-        visibility: hidden;
+        //visibility: hidden;
         margin: auto;
         position: absolute;
         top: 0; left: 0; bottom: 0; right: 0;
@@ -282,6 +282,7 @@ html, body{
       }
       .content_medium {
         display: inline-block;
+        visibility: hidden;
         top: 1em;
         width: 90%;
         position: relative;
@@ -290,7 +291,7 @@ html, body{
       .content_page_number {
         display: inline-block;
         position: relative;
-        width: 8%;
+        width: 20%;
         address{
           font-size: 3em;
           margin: auto;
@@ -404,7 +405,8 @@ html, body{
       }
 
       .content_top {
-
+        //height: 20%;
+        font-size: 1.5em;
       }
 
       .content_center {
@@ -656,7 +658,7 @@ and (min-height: 800px) and (min-width: 720px){
     border-width: 0.2em;
     padding-top: 0;
   }
-  
+
   .content_start {
     top: 0;
   }
@@ -682,8 +684,14 @@ and (min-height: 400px) and (min-width: 900px){
     .texture_div img{
       visibility: visible !important;
     }
-    .content_of_header{
-      visibility: visible !important;
+    .content_of_header {
+      .content_medium{
+        visibility: visible !important;
+      }
+      .content_page_number {
+        width: 8% !important;
+        height: 100% !important;
+      }
     }
   }
 
