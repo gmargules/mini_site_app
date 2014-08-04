@@ -26,6 +26,8 @@ $(document).ready(function () {
   $('.first_slide .circle,.first_slide .content_start').one("click",function(){
     //play first four videos
     play_video("1");
+    play_video("2");
+    play_video("3");
 
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header .content_medium');
@@ -138,7 +140,10 @@ $(document).ready(function () {
         calc_grades();
       }
       else{
-        play_video(question_id+1);    
+        play_video(question_id+3);
+        pause_video(question_id);
+        restart_video(question_id+1);
+           
       }
 
 			$.ajax({
@@ -179,6 +184,20 @@ function play_video(item_number){
   video = document.getElementById("myVideo_"+item_number);
   if(video != null){
     video.play();
+  }
+}
+
+function restart_video(item_number){
+  video = document.getElementById("myVideo_"+item_number);
+  if(video != null){
+    video.currentTime = 0;
+  }
+}
+
+function pause_video(item_number){
+  video = document.getElementById("myVideo_"+item_number);
+  if(video != null){
+    video.pause();
   }
 }
 
