@@ -215,14 +215,13 @@ $(document).ready(function () {
       }
     }
     
-    width_after_ratio_footer =5.9050772626931565*($(window).height())*0.03; //compensate safari issue
-    
-    $('footer svg').css('width',width_after_ratio_footer)
-    $('footer svg').css('left',windowWidth/2-windowHeight*0.09);
+    width_after_ratio_footer =8.389513108614233*($(window).height())*0.03; //compensate safari issue
+    $('footer svg').css('width',width_after_ratio_footer);
+    $('footer svg').css('left',windowWidth/2-windowHeight*0.13);
 
-    width_after_ratio_last_footer =3.8079470198675494*($(window).height())*0.03; //compensate safari issue
 
-    $('.last_slide footer svg').css('width',width_after_ratio_last_footer)
+    width_after_ratio_last_footer =$(window).height()*0.1; //compensate safari issue
+    $('.last_slide footer svg').css('width',width_after_ratio_last_footer);
     $('.last_slide footer svg').css('left',windowWidth/2-windowHeight*0.05);
 
     
