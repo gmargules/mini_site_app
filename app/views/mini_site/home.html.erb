@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-<title>Mini Site Questionnaire</title>
-
 
 </head>
 <body>
@@ -28,17 +26,13 @@
                         <div class="content_small" id="content_small_circle_2">
                             <div class="circle_2" id="first_slide_circle_2"></div>     
                         </div>	
-            			<div class="content_start">
-            				<h3>START</h3>	
-            			</div>
+            		<!--	<div class="content_start"> -->
+            				<h3 id="start_text">START</h3>	
+            		<!--	</div> -->
     				</div>
     				<div class="content_bottom">   
-    					<section>Take this short test to find out if you are <br> ready to take your idea to the next level</section>
+    					<section>Take this short test to find out if you are ready to take your idea to the next level</section>
     				</div>
-    				<footer>
-    					<%=render "powered_by.svg"%>
-    					<address>Powered by Monkeytech</address>
-    				</footer>
     			</div> 	             
             </div>
         	<% @questions.each_with_index do |question,i| %>
@@ -51,64 +45,74 @@
                                 <address><%=i+1%>/30</address>
                             </div>
                             
-                            <div class="content_medium">
+                            <div class="content_medium" id="banana_svgs">
                                 <svg id="banana_svg_<%=i%>_0">                        
                                     <%=render "banana.svg"%>
+                                </svg>
+                            </div> 
+                            <div class="content_medium" id="circle_svgs" >
+                                <svg id="circle_svg_<%=i%>_0" > 
+                                    <circle cx="5" cy="5" r="4" fill="transparent" />
                                 </svg>
                             </div>
                         </div>
                     </header>
                     <div class="content_top">
                         <h1><%=question.content%></h1>
-                        <canvas id="myCanvas_<%=question.id%>" width="200" height="200" style="visibility: hidden;">
+                        <canvas id="myCanvas_<%=question.id%>" width="1" height="1" style="visibility: hidden;">
                             Sorry! your browswer does not support canvs.
                         </canvas>
                     </div>
                     <div class="content_center">
                         <div class="content_small" id="video_container_<%=question.id%>">
                             <%=video_tag(["#{question.video_filename}.mp4", "#{question.video_filename}.webm", "#{question.video_filename}.ogv"], id: "myVideo_#{question.id}", preload: "none", loop: true, width: '100%', height: '80%', audio: 'muted')%>
-                        <!--    <video id="myVideo_#{question.id}" preload loop width="100%" height="80%" audio="muted" >
+                           <!-- <video id="myVideo_#{question.id}" preload loop width="100%" height="80%" audio="muted" >
                              <source src="/assets/<%=question.video_filename%>.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> 
                              <source src="/assets/<%=question.video_filename%>.webm" type='video/webm; codecs="vp8, vorbis"'> 
                              <source src="/assets/<%=question.video_filename%>.ogv" type='video/ogg; codecs="theora, vorbis"'> 
-                            </video>    -->
+                            </video> -->
                         </div>  
                     </div>
                     <div class="content_bottom"> 
                         <div class="small_circles_content">
                             <div class="content_of_small_circle">
-                                <div class="small_circle small_circle_1" href="#myCarousel" data-slide="next">1</div>
+                                <div class="small_circle small_circle_1">1</div>
                                 <h2>Have no idea</h2>
                             </div>
                             <div class="content_of_small_circle"> 
-                                <div class="small_circle small_circle_2" href="#myCarousel" data-slide="next">2</div>
+                                <div class="small_circle small_circle_2">2</div>
+                                <h2 style="visibility: hidden;">Know for sure</h2>
                             </div>
                             <div class="content_of_small_circle">
-                                <div class="small_circle small_circle_3" href="#myCarousel" data-slide="next">3</div>
+                                <div class="small_circle small_circle_3">3</div>
+                                <h2 style="visibility: hidden;">Know for sure</h2>
                             </div>
                             <div class="content_of_small_circle">
-                                <div class="small_circle small_circle_4" href="#myCarousel" data-slide="next">4</div>
+                                <div class="small_circle small_circle_4">4</div>
+                                <h2 style="visibility: hidden;">Know for sure </h2>
                             </div>
                             <div class="content_of_small_circle">
-                                <div class="small_circle small_circle_5" href="#myCarousel" data-slide="next">5</div>
+                                <div class="small_circle small_circle_5">5</div>
                                 <h2>Know for sure</h2>
                             </div>
                         </div>
                     </div>
                     <footer>
                         <%=render "powered_by.svg"%>
-                        <address>Powered by Monkeytech</address>
                     </footer>
                 </div>                
             </div>
             <% end %>
-            <div class="item last_slide azure ">             
+            <div class="item last_slide azure">             
                 <div class="content_large">
                     <div class="content_top">
-                        <h1>How ready are you?</h1>
+                        <h1 id="last_slide_title">How ready are you?</h1>
                     </div>
                     <div class="content_center">
                         <div class="content_small">
+                            <div style="width:100%; height: 100%; position:absolute; z-index: 4;">
+                                <canvas id="calculation_canvas"></canvas>
+                            </div>
                             <div style="width:100%; height: 100%; position:absolute; z-index: 3;">
                                 <canvas id="my_lines_canvas"></canvas>
                             </div>
@@ -124,15 +128,18 @@
                             <div style="width:100%; height: 100%; position:absolute;">
                                 <input class='knob4' data-fgColor="#215648" data-thickness='.4' data-readonly='true' type='text' value='100' data-displayInput="false">
                             </div>
-                            
-                        </div>  
+                        </div> 
                     </div>
-                    <div class="content_bottom">   
-                        <section>You can use some help, press on the monkey!</section>
+                    <div class="content_bottom">
+                        <h1 id="last_slide_loading_title">Loading...</h1>    
+                        <section>Good job! Making a good product is a magical journey. Make sure you've got it all covered before you hit the road</section>
+                        
                     </div>
                     <footer>
-                        <%=render "powered_by.svg"%>
+                        <%=render "monkey.svg"%>
+                        <h2>Click on the monkey to find out more...</h2>
                     </footer>
+                   
                 </div>               
             </div>
         </div>

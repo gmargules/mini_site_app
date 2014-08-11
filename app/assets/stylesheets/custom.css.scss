@@ -27,18 +27,18 @@ html, body{
   margin: 0px;
   position: fixed;
   padding: 0px;
-  font-size: 4px; 
+  font-size: 2px; 
   width: 100%; 
   height: 100%;
 }
 
 .small_circles_content{
   
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  //height: 95%;
   overflow: hidden;
   margin: auto;
-  position: absolute;
+  //position: absolute;
   display: inline-block;
   top: 0;
   left: 0;
@@ -61,37 +61,13 @@ html, body{
   }
 }
 
-.circle {
-  width: 20em;
-  height: 20em;
-  border-radius: 50%;
-  background: #8b3b3b;
-  display: inline-block;
-  margin: 2em;
-  cursor: pointer; 
-}
 
-.circle_2 {
-  width: 21em;
-  height: 21em;
-  border-radius: 50%;
-  background: #e1cb34;
-  display: inline-block;
-  visibility: hidden;
-  margin: 2em;
-  cursor: pointer;
-}
-#content_small_circle_2{
-  top: -1em;
-  z-index:1;
-}
-
-#content_small_circle{
-  z-index:2;
-}
 
 .not_hidden_class{
   visibility: visible !important;
+}
+.hidden_class{
+  visibility: hidden !important;
 }
 
 .small_circle_1{
@@ -110,22 +86,7 @@ html, body{
   background: #25685e;
 }
 
-.small_circle {
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-  position: absolute;
-  margin: 0.5em;
-  cursor: pointer;
-  color: white;
-  font-family: "geared_slabregular";   
-  //min-width: 14px;
-  padding: 0.4em 0 0 0;
-  text-align: center;
-  font-weight: normal;
-  line-height: 2em;
-  font-size: 3em;
-}
+
 
 .content_large {
   width: 100%;
@@ -139,21 +100,21 @@ html, body{
 
 .content_top {
   width: 100%;
-  height: 18%;
+  height: 16%;
   overflow: hidden;
-  margin: auto;
   z-index: 2;
   position: relative;
-  top: 1.5em; left: 0; bottom: 0; right: 0;
+  //top: 1.5em; left: 0; bottom: 0; right: 0;
+  top: 0; left: 0; bottom: 0; right: 0;
   text-align: center;
 }
 
 .content_center {
   width: 100%;
-  height: 40%;
+  //height: 40%;
   overflow: hidden;
   position: relative;
-  top: -1em; left: 0; bottom: 0; right: 0;
+  top: 0em; left: 0; bottom: 0; right: 0;
   text-align: center;
   z-index: 0;
 }
@@ -161,9 +122,9 @@ html, body{
 
 .content_bottom {
   width: 100%;
-  height: 20%;
+  //height: 20%;
   overflow: hidden;
-  margin: 0.5em;
+  margin: auto;
   position: relative;
   top: 0; left: 0; bottom: 0; right: 0;
   text-align: center;
@@ -173,39 +134,12 @@ html, body{
 
 
 
-.content_start {
-  width: 20em;
-  height: 9em;
-  overflow: hidden;
-  margin: auto;
-  position: absolute;
-  cursor: pointer;
-  top: -2em; left: 0; bottom: -2em; right: 0;
-  text-align: center;
-  z-index:3;
-}
 
 
-.content_of_small_circle {
-  width: 10em;
-  height: 8em;
-  display: inline-block;
-  position: relative;
-}
-.content_of_small_circle_h2 {
-  display: inline-block;
-  position: relative;
-  height: 8em;
-  top: -2em;
-  vertical-align: middle;
-  padding-right: 2em;
-}
 
-.small_circle_on_hover{
-  border-style: solid;
-  border-width: 0.2em;
-  padding-top: 0.2em;
-}
+
+
+
 
 .mini_site{
   .carousel-indicators {
@@ -225,26 +159,85 @@ html, body{
     position: relative;
     font-family: "geared_slabregular";
 
+    .content_of_small_circle {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      h2 {
+        position: relative !important;
+        margin: 0;
+        font-size: 5em;
+        font-weight: normal;
+        line-height: 1em;
+        display: inline-block;
+        //position: absolute;
+        //top: 3em;
+        top: 0.1em;
+        left: -0.2em;
+        width: 4em;
+      }
+    }
+
+    .small_circle {
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50%;
+      //position: absolute;
+      //margin-left: 2em;
+      margin: 0;
+      cursor: pointer;
+      color: white;
+      font-family: "geared_slabregular";   
+      //min-width: 14px;
+      padding: 0.6em 0 0 0;
+      text-align: center;
+      font-weight: normal;
+      //line-height: 2em;
+      font-size: 7em;
+    }
+
+    .small_circle_on_hover{
+      border-style: solid;
+      border-width: 0.2em;
+      padding-top: 0.45em;
+    }
+
+
+
+    .small_circle_on_click{
+      border-style: solid;
+      border-width: 0.2em;
+      padding-top: 0.2em;
+    }
+
     footer {
       width: 100%;
-      height: 5em;
+      //height: 5em;
       overflow: hidden;
       margin: auto;
+      display: inline-block;
       visibility: hidden;
-      position: relative;
-      top: 1em; left: 0; bottom: 0; right: 0;
-      text-align: center;
+      //position: relative;
+      top: 0; left: 0; bottom: 0; right: 0;
+      vertical-align: bottom;
 
       svg {
-        vertical-align: middle;
-        padding-bottom: 3em;
-        display: inline;
-        width: 3.7em ;
-        height: auto;
-        path,rect {
+
+        margin: 0;
+        position: absolute;
+        //vertical-align: middle;
+        padding-left: 1%;
+        padding-right: 1%;
+        display: block;
+        width: auto;
+        height: 3%;
+        path, rect, text {
           fill: #e4c52e;
         }
         cursor: pointer;
+        bottom: 3%;
+        left: 45%;
       }
       address{
         font-size: 3em;
@@ -256,45 +249,65 @@ html, body{
     
     header {
       width: 100%;
-      height: 9%;
+      //height: 9%;
       overflow: hidden;
       position: relative;
       top: 0em; left: 0; bottom: 0; right: 0;
-
+      display: inline-block;
       .content_of_header {
-        width: 85%;
-        height: 95%;
+        width: 100%;
+        //height: 95%;
         overflow: hidden;
-        //visibility: hidden;
         margin: auto;
-        position: absolute;
+        //position: absolute;
         top: 0; left: 0; bottom: 0; right: 0;
         text-align: center;
       }
 
-      svg {
+      svg{
+
         display: inline-block;
         width: 3.2% ;
-        height: 4em;
-        path {
+        path, circle {
           fill: #e4c52e;
         }
       }
+
       .content_medium {
-        display: inline-block;
-        visibility: hidden;
-        top: 1em;
-        width: 90%;
+        //top: 1em;
+        margin-bottom: 0.5%;
+        
         position: relative;
+
       }
+
+      #banana_svgs {
+        display: none;
+        width: 90%;
+        top: 1em;
+        svg{
+          height: 4em;
+        }
+      }
+
+      #circle_svgs {
+        display: inline-block;
+        width: 100%;
+        svg{
+          height: 5em;
+        }
+      }
+      
 
       .content_page_number {
         display: inline-block;
-        position: relative;
+        margin-bottom: 0.5%;
+        margin-top: 3%;
+        //position: relative;
         width: 20%;
         address{
-          font-size: 3em;
-          margin: auto;
+          font-size: 4em;
+          margin: 0;
           display: inline-block;
         }
       }
@@ -302,24 +315,14 @@ html, body{
 
 
     h1{
-      font-size: 3em;
+      font-size: 5em;
       text-align: center;
-      line-height: 1em;
+      line-height: 1.5em;
       font-weight: normal;
-      margin: 0.5em; 
+      margin-top: 3%; margin-left: 3%; margin-bottom: 0.5%; margin-right: 3%;
     }
 
-    h2{
-
-      font-size: 2.5em;
-      font-weight: normal;
-      line-height: 1em;
-      display: inline-block;
-      position: absolute;
-      top: 3em;
-      left: 0;
-      width: 5em;
-    } 
+    
 
     section{
       margin: 0;
@@ -330,12 +333,14 @@ html, body{
 
     .content_small {
       width: 100%;
-      height: 40em;
+      //height: 40em;
       overflow: hidden;
       font-size: 1em;
-      margin: auto;
-      position: absolute;
-      top: 8em; left: 0; bottom: 0; right: 0;
+      margin-bottom: 0.5%;
+      margin-top: 0.5%;
+      //position: absolute;
+     //top: 8em; left: 0; bottom: 0; right: 0;
+      top: 0; left: 0; bottom: 0; right: 0;
       text-align: center;
     }
 
@@ -345,59 +350,122 @@ html, body{
     &.first_slide{
       
       background-image: url("/assets/banana_texture.svg") !important;
-      background-size: 7em !important;
+      background-size: 20em !important;
       background-repeat: repeat; 
 
+      .content_start {
+        width: 20em;
+        height: 9em;
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+        cursor: pointer;
+        top: 0; left: 0; bottom: 0; right: 0;
+        text-align: center;
+        display: block;
+
+
+      }
+
+      h3{
+          font-size: 11em;
+          //line-height: 0.2em;
+          color: #e4c52e ;
+          text-shadow: -0.05em -0.02em #2f8376; 
+          position: absolute;   
+          z-index:3;
+          margin: 0;
+          top: 1.5em;
+          display: inline-block;
+          cursor: pointer;
+        }
+
+      .circle {
+        width: 40em;
+        height: 40em;
+        border-radius: 50%;
+        background: #8b3b3b;
+        display: inline-block;
+        margin: 2em;
+        cursor: pointer; 
+      }
+
+      .circle_2 {
+        width: 43em;
+        height: 43em;
+        border-radius: 50%;
+        background: #e1cb34;
+        display: inline-block;
+        visibility: hidden;
+        margin: 2em;
+        cursor: pointer;
+      }
+      #content_small_circle_2{
+        top: -1.5em;
+        z-index:1;
+      }
+
+      #content_small_circle{
+        z-index:2;
+      }
+
       .content_small {
-        height: 24em;
-        top: 0em;
+        position: absolute;
+      //height: 40em;
+        top: 0;
+      }
+
+        #content_small_circle {
+        position: absolute;
       }
 
       .content_top {
-        top: 1em;
+        top: 3%;
         height: 25%;
       }
 
       .content_center {
         margin: 0.5em;
+        height: 43%;
       }
 
       .content_bottom {
-        top: 3em;
-        height: 20%;
-        padding-bottom: 0;
+       // top: 3em;
+        width: 80%;
+       display: inline-block;
       }
 
       .content_medium {
-        width: 100%;
-        height: 50%;
-        position: relative;
+      //  width: 100%;
+      //  height: 50%;
+      //  position: relative;
       }
 
       h1{
-        font-size: 7em;        
+        font-size: 11em;
+        line-height: 1em;       
       }
 
       footer {
-        top: 4em;
+      //  top: 4em;
       }
 
       section{
-        font-size: 4em;
+        display: inline-block;
+        font-size: 7em;
         color: #e4c52e ; 
    
       }
 
-      h3{
-        font-size: 7em;
-        line-height: 0.2em;
-        color: #e4c52e ;
-        text-shadow: -0.05em -0.02em #2f8376;    
-      }
+      
 
     }
 
     &.last_slide{
+
+      background-image: url("/assets/banana_texture.svg") !important;
+      background-size: 20em !important;
+      background-repeat: repeat; 
 
       .content_small {
         height: 100%;
@@ -405,43 +473,66 @@ html, body{
       }
 
       .content_top {
-        //height: 20%;
+        height: 17%;
         font-size: 1.5em;
+
+        h1{
+          font-size: 7em;
+          color: #21685e !important;
+        }
+
       }
 
       .content_center {
-        height: 54%;
+        height: 55%;
         top: 0;
       }
 
       .content_bottom {
-        top: 3em;
+        //top: 3em;
+        width: 90%;
+        display: inline-block;
+
       }
 
       .content_medium {
 
       }
 
-      h1{
-     
-      }
+      
 
       footer {
-        width: 95%;
-        height: 10em;
+      //  width: 95%;
+      //  height: 10em;
         visibility: visible;
-        top: -7em;
+       // top: -7em;
         z-index: 3;
 
         svg {
-          width: 10em ;
+          width: auto;
+          height: 10%;
           float: right;
+          display: block;
+          margin: auto;
+          bottom: 3%;
+          position: absolute;
+        }
+        h2{
+          position: absolute;
+          bottom: 3%;
+          top: auto;
+          left: 3%;
+          width: 8em;
+          color: #21685e !important;
+          font-size: 4em;
+          z-index: 1;
         }
       }
 
       section{
-        font-size: 2.8em;
-        color: #e4c52e ;    
+        font-size: 5.5em;
+        color: #21685e ;
+        line-height: 1em    
       }
 
       h3{
@@ -486,7 +577,7 @@ html, body{
           color: #e4c52e ;
         }
         svg {     
-          path, rect  {
+          path, rect, circle, text  {
             fill: #e4c52e;
           }
         }
@@ -514,7 +605,7 @@ html, body{
           color: #fffbed ;
         }
         svg {     
-          path, rect  {
+          path, rect, circle, text  {
             fill: #fffbed;
           }
         }
@@ -541,7 +632,7 @@ html, body{
           color: #21685e ;
         }
         svg {     
-          path, rect {
+          path, rect, circle, text {
             fill: #21685e;
           }
         }
@@ -585,7 +676,7 @@ html, body{
           color: #e4c52e ;
         }
         svg {     
-          path, rect  {
+          path, rect, circle, text  {
             fill: #e4c52e;
           }
         }
@@ -597,86 +688,147 @@ html, body{
 
 }
 
+
+
+
 @media only screen 
-and (min-height: 385px){
+and (min-width: 600px){
+  .mini_site{
+    .item{
+      header{
+        width: 90%;
+      }
+    }
+  }
+}
+@media only screen 
+and (min-width: 760px){
+  .mini_site{
+    .item{
+      header{
+        width: 80%;
+      }
+    }
+  }
+}
+@media only screen 
+and (min-width: 1000px){
+  .mini_site{
+    .item{
+      header{
+        width: 70%;
+      }
+    }
+  }
+}
+@media only screen 
+and (min-width: 1360px){
+  .mini_site{
+    .item{
+      header{
+        width: 60%;
+      }
+    }
+  }
+}
+@media only screen 
+and (min-width: 1800px){
+  .mini_site{
+    .item{
+      header{
+        width: 45%;
+      }
+    }
+  }
+}
+
+
+
+@media only screen 
+and (min-height: 350px) and (min-width: 300px){
+  html, body{
+    font-size: 3px; 
+  }
+  .mini_site{
+    .item{
+      .small_circle{
+        width: 2em;
+        height: 2em;
+        font-size: 6em;
+        padding: 0.4em 0 0 0;
+      }
+
+
+
+      .content_of_small_circle {
+        .small_circle_on_hover{
+          border-style: solid;
+          border-width: 0.2em;
+          padding-top: 0.25em;
+        }
+
+        h2 {
+          font-size: 4em;
+          left: -0.5em;
+        }
+      }
+      .last_slide{
+        h2{
+          width: 7em;
+          font-size: 4em;
+
+        }
+
+      }
+    }
+
+  }
+}
+
+@media only screen 
+and (min-height: 480px) and (min-width: 400px){
+  html, body{
+    font-size: 4px; 
+  }
+}
+
+
+@media only screen 
+and (min-height: 620px) and (min-width: 520px){
+  html, body{
+    font-size: 5px; 
+  }
+  .mini_site{
+    .item{
+      .content_of_small_circle {
+        .small_circle_on_hover{
+          padding-top: 0.2em;
+        }
+      }
+
+      &.first_slide{
+        section{
+          font-size: 6em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen 
+and (min-height: 800px) and (min-width: 680px){
   html, body{
     font-size: 6px; 
   }
-
-  .content_start {
-    top: -1em;
-  }
-
-  .mini_site .item.first_slide h3{
-    line-height: 0.5em;
-  }
-}
-@media only screen 
-and (min-height: 450px) and (min-width: 580px){
-  html, body{
-    font-size: 8px; 
-  }
-  .content_start {
-    top: 0;
+  .mini_site{
+    .item{
+      
+    }
   }
 }
 
-@media only screen 
-and (min-height: 550px) and (min-width: 720px){
-  html, body{
-    font-size: 10px; 
-  }
 
-  .content_start {
-    top: 0;
-  }
-  .mini_site .item.first_slide h3{
-    line-height: 0.7em;
-  }
-}
 
-@media only screen 
-and (min-height: 800px) and (min-width: 720px){
-  html, body{
-    font-size: 12px; 
-  }
-
-  .small_circle {
-    width: 2em;
-    height: 2em;
-    padding: 0.15em 0 0 0;
-    font-size: 2em;
-  } 
-
-  h2{
-    font-size: 2em;
-    top: 2em !important;
-  }
-
-  .small_circle_on_hover{
-    border-style: solid;
-    border-width: 0.2em;
-    padding-top: 0;
-  }
-
-  .content_start {
-    top: 0;
-  }
-}
-
-@media only screen 
-and (min-height: 800px) and (min-width: 1020px){
-  html, body{
-    font-size: 14px; 
-  }
-  .content_start {
-    top: 0;
-  }
-  .mini_site .item.first_slide h3{
-    line-height: 0.9em;
-  }
-  
-}
 
 @media only screen 
 and (min-height: 400px) and (min-width: 900px){
@@ -684,13 +836,23 @@ and (min-height: 400px) and (min-width: 900px){
     .texture_div img{
       visibility: visible !important;
     }
+    #bananas_header{
+
+    }
     .content_of_header {
-      .content_medium{
-        visibility: visible !important;
+      
+      
+      #banana_svgs {
+          display: inline-block !important;
+        }
+
+      #circle_svgs {
+        display: none !important;
       }
+
       .content_page_number {
-        width: 8% !important;
-        height: 100% !important;
+      //  width: 8% !important;
+      //  height: 100% !important;
       }
     }
   }

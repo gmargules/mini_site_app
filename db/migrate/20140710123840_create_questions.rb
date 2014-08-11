@@ -9,7 +9,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :grade_type
     	t.string :video_filename
 
-      	t.timestamps
+      t.timestamps
     end
   end
 end
