@@ -364,7 +364,9 @@ function change_slide_background(){
   video = document.getElementById("myVideo_"+slide_number);
  if(video != null){
     context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
+    console.log(context);
     context.drawImage(video, 0, 0, 1, 1);
+    console.log(context.getImageData(0, 0, 1, 1));
     pixelData = context.getImageData(0, 0, 1, 1).data;
     console.log(pixelData);
     slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
