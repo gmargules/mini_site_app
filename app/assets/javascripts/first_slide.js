@@ -361,11 +361,12 @@ function change_slide_background(){
   var video_id=event.target.id;
   var slide_to_change = $("#"+video_id).closest('.item');
   var slide_number = $('div.item').index(slide_to_change);
-  video = document.getElementById("myVideo_"+slide_number);
- if(video != null){
+  var myVideo = document.getElementById("myVideo_"+slide_number);
+  console.log(myVideo);
+ if(myVideo != null){
     context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
-    context.drawImage(video, 0, 0);
-    console.log(context.getImageData(0, 0, 1, 1).data);
+    console.log(context);
+    context.drawImage(myVideo, 0, 0, 1, 1);
     pixelData = context.getImageData(0, 0, 1, 1).data;
     console.log(pixelData);
     slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
