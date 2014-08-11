@@ -67,6 +67,7 @@ $(document).ready(function () {
         context = document.getElementById("myCanvas_"+next_item_number).getContext("2d");
         context.drawImage(video, 0, 0, 1, 1);
         pixelData = context.getImageData(0, 0, 1, 1).data;
+        console.log(pixelData);
         $('.active').next().css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
       }
     }
