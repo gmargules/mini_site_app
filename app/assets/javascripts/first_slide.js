@@ -59,17 +59,7 @@ $(document).ready(function () {
         circle_returned_item.css("opacity",'0.5');
       }
 
-      //fit background of next item
-      next_item_number=number+1;
-      video = document.getElementById("myVideo_"+next_item_number);
-      if(video != null){
-        //video.addEventListener('onloaded', function() { this.play(); } );
-        context = document.getElementById("myCanvas_"+next_item_number).getContext("2d");
-        context.drawImage(video, 0, 0, 1, 1);
-        pixelData = context.getImageData(0, 0, 1, 1).data;
-        console.log(pixelData);
-        $('.active').next().css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
-      }
+      //fit background of next item 
     }
 
     //handle variables hande fade of start button 
@@ -98,11 +88,11 @@ $(document).ready(function () {
     
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
-    var max_width_height=Math.max(windowWidth,windowHeight)
-    ;
+    var max_width_height=Math.max(windowWidth,windowHeight);
     var element = $('.circle').detach();
     $('.first_slide').append(element);
     $('.circle').animate({ width:max_width_height*2, height:max_width_height*2, top:windowHeight-(Math.sqrt(2)*max_width_height),  left:windowWidth-(Math.sqrt(2)*max_width_height)}, 1000).promise().done(function () {
+      change_next_slide_background(1);
       $('#myCarousel').carousel('next');
       $('#myCarousel').carousel('pause');
     });
@@ -158,6 +148,9 @@ $(document).ready(function () {
       else{
         play_video(question_id+3);
         pause_video(question_id);
+
+        //change background color
+        change_next_slide_background(question_id+1);
         restart_video(question_id+1);
            
       }
@@ -362,9 +355,20 @@ var ctx=canvas.getContext("2d");
 
     }, 500);
   }
-
-
 }
+
+function change_next_slide_background(video_number){
+  video = document.getElementById("myVideo_"+video_number);
+  if(video != null){
+    //video.addEventListener('onloaded', function() { this.play(); } );
+    context = document.getElementById("myCanvas_"+video_number).getContext("2d");
+    context.drawImage(video, 0, 0, 1, 1);
+    pixelData = context.getImageData(0, 0, 1, 1).data;
+    console.log(pixelData);
+    $('.active').next().css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
+  }
+}
+
 
 function calc_grades(){
 
