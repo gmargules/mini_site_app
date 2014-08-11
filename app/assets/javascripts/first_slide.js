@@ -92,7 +92,6 @@ $(document).ready(function () {
     var element = $('.circle').detach();
     $('.first_slide').append(element);
     $('.circle').animate({ width:max_width_height*2, height:max_width_height*2, top:windowHeight-(Math.sqrt(2)*max_width_height),  left:windowWidth-(Math.sqrt(2)*max_width_height)}, 1000).promise().done(function () {
-      change_next_slide_background(1);
       $('#myCarousel').carousel('next');
       $('#myCarousel').carousel('pause');
     });
@@ -150,7 +149,6 @@ $(document).ready(function () {
         pause_video(question_id);
 
         //change background color
-        change_next_slide_background(question_id+1);
         restart_video(question_id+1);
            
       }
@@ -240,6 +238,7 @@ $(window).load(function bababa(){
 function play_video(item_number){
   video = document.getElementById("myVideo_"+item_number);
   if(video != null){
+    video.addEventListener('loadeddata', function(event) { change_slide_background();} );
     video.play();
   }
 }
@@ -357,15 +356,18 @@ var ctx=canvas.getContext("2d");
   }
 }
 
-function change_next_slide_background(video_number){
-  video = document.getElementById("myVideo_"+video_number);
-  if(video != null){
-    //video.addEventListener('onloaded', function() { this.play(); } );
-    context = document.getElementById("myCanvas_"+video_number).getContext("2d");
+function change_slide_background(){
+  
+  var video_id=event.target.id;
+  var slide_to_change = $("#"+video_id).closest('.item');
+  var slide_number = $('div.item').index(slide_to_change);
+  video = document.getElementById("myVideo_"+slide_number);
+ if(video != null){
+    context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
     context.drawImage(video, 0, 0, 1, 1);
     pixelData = context.getImageData(0, 0, 1, 1).data;
     console.log(pixelData);
-    $('.active').next().css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
+    slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
   }
 }
 
