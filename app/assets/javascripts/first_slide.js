@@ -70,7 +70,7 @@ $(document).ready(function () {
     grade_design = 0;
     BrowserDetection();
     user_version = Math.round(Math.random());
-    console.log(user_version);
+    //console.log(user_version);
     if (user_version == 1){
       $('.item footer').addClass('not_hidden_class');
 
@@ -130,10 +130,10 @@ $(document).ready(function () {
 
       //Checking grades
       
-      console.log(window.grade_concept);
-      console.log(window.grade_business_readiness);
-      console.log(window.grade_tech_readiness);
-      console.log(window.grade_design);
+      //console.log(grade_concept);
+      //console.log(grade_business_readiness);
+      //console.log(grade_tech_readiness);
+      //console.log(grade_design);
       
       if ( $('div.item').last().is($('div.active').next())){
 
@@ -362,14 +362,10 @@ function change_slide_background(){
   var slide_to_change = $("#"+video_id).closest('.item');
   var slide_number = $('div.item').index(slide_to_change);
   var myVideo = document.getElementById("myVideo_"+slide_number);
-  //console.log(myVideo);
  if(myVideo != null){
     context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
     context.drawImage(myVideo, 0, 0, 1, 1);
-    context.restore();
-    context.save();
     pixelData = context.getImageData(0, 0, 1, 1).data;
-    console.log(pixelData);
     slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
   }
 }
@@ -383,31 +379,17 @@ function calc_grades(){
   final_grade_tech_readiness = Math.round(100*grade_tech_readiness / 45);//52.5
   final_grade_design = Math.round(100*grade_design / 20);//27.5
   
-  // console.log("final_grade_concept =" + final_grade_concept);
-  // console.log("final_grade_business_readiness =" + final_grade_business_readiness);
-  // console.log("final_grade_tech_readiness =" + final_grade_tech_readiness);
-  // console.log("final_grade_design =" + final_grade_design);
-  
+ 
   total_ring_weight = final_grade_concept + final_grade_business_readiness + final_grade_tech_readiness + final_grade_design;
-  
-  // console.log("total_ring_weight =" + total_ring_weight);
-  
+
   //calculate percentage of each grade from total ring
   final_grade_concept_arc_size = Math.round(360*final_grade_concept/total_ring_weight);
   final_grade_business_readiness_arc_size = Math.round(360*final_grade_business_readiness/total_ring_weight);
   final_grade_tech_readiness_arc_size = Math.round(360*final_grade_tech_readiness/total_ring_weight);     
   final_grade_design_arc_size = Math.round(360*final_grade_design/total_ring_weight);
 
-  // console.log("final_grade_concept_arc_size =" + final_grade_concept_arc_size);
-  // console.log("final_grade_business_readiness_arc_size =" + final_grade_business_readiness_arc_size);
-  // console.log("final_grade_tech_readiness_arc_size =" + final_grade_tech_readiness_arc_size);
-  // console.log("final_grade_design_arc_size =" + final_grade_design_arc_size);
-
   //fix to match 100% of ring
- // console.log("before final_grade_concept_arc_size =" + final_grade_concept_arc_size);
   final_grade_concept_arc_size = final_grade_concept_arc_size + 360 - ( final_grade_concept_arc_size + final_grade_business_readiness_arc_size + final_grade_tech_readiness_arc_size + final_grade_design_arc_size);
-//  console.log("after final_grade_concept_arc_size =" + final_grade_concept_arc_size);
-
 
   $('.knob1').attr({"data-angleOffset": 0, "data-angleArc": final_grade_tech_readiness_arc_size});
   $('.knob2').attr({"data-angleOffset": final_grade_tech_readiness_arc_size, "data-angleArc": final_grade_design_arc_size});
