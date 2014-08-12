@@ -362,15 +362,17 @@ function change_slide_background(){
   var slide_to_change = $("#"+video_id).closest('.item');
   var slide_number = $('div.item').index(slide_to_change);
   var myVideo = document.getElementById("myVideo_"+slide_number);
-  console.log(myVideo);
+  //console.log(myVideo);
  if(myVideo != null){
     context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
     context.drawImage(myVideo, 0, 0, 1, 1);
+    context.restore();
+    context.save();
     pixelData = context.getImageData(0, 0, 1, 1).data;
+    console.log(pixelData);
     slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
   }
 }
-
 
 function calc_grades(){
 
