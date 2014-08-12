@@ -180,7 +180,7 @@ $(document).ready(function () {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
 
-    console.log($(window).width()+","+$(window).height());
+    //console.log($(window).width()+","+$(window).height());
     var min_width_height=Math.min(windowWidth,windowHeight)/1.9;
     lines_canvas = document.getElementById('my_lines_canvas');
     calculation_canvas = document.getElementById('calculation_canvas');
@@ -366,8 +366,13 @@ function change_slide_background(){
     var context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
     context.drawImage(myVideo, 0, 0, 5, 5);
     var pixelData = context.getImageData(0, 0, 5, 5).data;
-    console.log(video_id, pixelData);
+    console.log("here1");
+    if(!(pixelData[0]=="0" && pixelData[1]=="0" && pixelData[2]=="0")){
+      console.log("here2");
+      slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
+    }
     if(!(pixelData[0]==0 && pixelData[1]==0 && pixelData[2]==0)){
+      console.log("here3");
       slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
     }
   }
