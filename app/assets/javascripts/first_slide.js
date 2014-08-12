@@ -363,10 +363,11 @@ function change_slide_background(){
   var slide_number = $('div.item').index(slide_to_change);
   var myVideo = document.getElementById("myVideo_"+slide_number);
  if(myVideo != null){
-    context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
-    context.drawImage(myVideo, 0, 0, 1, 1);
-    pixelData = context.getImageData(0, 0, 1, 1).data;
-    slide_to_change.css('background',"rgb('+pixelData[0]+','+pixelData[1]+','+pixelData[2]+')'");
+    var context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
+    context.drawImage(myVideo, 0, 0, 5, 5);
+    var pixelData = context.getImageData(0, 0, 5, 5).data;
+    console.log(video_id, pixelData);
+    slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
   }
 }
 

@@ -155,7 +155,6 @@ html, body{
     text-align: center;     
     min-width: 100%; 
     min-height: 100%; 
-    background: #40b1a3; 
     position: relative;
     font-family: "geared_slabregular";
 
@@ -352,7 +351,7 @@ html, body{
       background-image: url("/assets/banana_texture.svg") !important;
       background-size: 20em !important;
       background-repeat: repeat; 
-
+      background: #40b1a3;
       .content_start {
         width: 20em;
         height: 9em;
@@ -466,7 +465,7 @@ html, body{
       background-image: url("/assets/banana_texture.svg") !important;
       background-size: 20em !important;
       background-repeat: repeat; 
-
+      background: #40b1a3;
       .content_small {
         height: 100%;
         top: 0;
