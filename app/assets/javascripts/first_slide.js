@@ -68,6 +68,7 @@ $(document).ready(function () {
     grade_business_readiness = 0;
     grade_tech_readiness = 0;
     grade_design = 0;
+    is_safari = false;
     BrowserDetection();
     user_version = Math.round(Math.random());
     //console.log(user_version);
@@ -238,7 +239,9 @@ $(window).load(function bababa(){
 function play_video(item_number){
   video = document.getElementById("myVideo_"+item_number);
   if(video != null){
-    video.addEventListener('loadeddata', function(event) { change_slide_background();} );
+    if(!is_safari){
+      video.addEventListener('loadeddata', function(event) { change_slide_background();} );
+    }
     video.play();
   }
 }
@@ -527,7 +530,7 @@ function BrowserDetection(){
   }
   //Check if browser is Safari or not
   else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-
+    is_safari = true;
   }
   //Check if browser is Opera or not
   else if (navigator.userAgent.search("Opera") >= 0) {
