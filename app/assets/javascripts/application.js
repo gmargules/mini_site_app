@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require jquery.knob
+//= require first_slide
+
 //= require_tree .
-//= require first_slide.js
-//= require jquery.knob.js

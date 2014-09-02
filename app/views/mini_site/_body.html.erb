@@ -1,0 +1,66 @@
+<% questions.each_with_index do |question,i| %>   
+    <div class="item <%=question.style%>" data-grade_type="<%= question.grade_type %>" data-weight="<%= question.weight %>">            	
+    	<div class="content_large">
+            <header id="bananas_header">
+                <div class="content_of_header">
+                    <div class="content_page_number">
+                        <address><%= i + 1 %>/30</address>
+                    </div>
+                    
+                    <div class="content_medium" id="banana_svgs">
+                        <svg id="banana_svg_<%= i %>_0">                        
+                            <%= render 'svg/banana.svg' %>
+                        </svg>
+                    </div> 
+
+                    <div class="content_medium" id="circle_svgs" >
+                        <svg id="circle_svg_<%= i %>_0" > 
+                            <circle cx="5" cy="5" r="4" fill="transparent" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content_top">
+                <h1><%= question.content %></h1>
+                <canvas id="myCanvas_<%= question.id %>" width="5" height="5" style="visibility: hidden;"></canvas>
+            </div>
+
+            <div class="content_center">
+                <div class="content_small" id="video_container_<%=question.id%>">
+                    <%= video_tag(["#{question.video_filename}.mp4", "#{question.video_filename}.webm", "#{question.video_filename}.ogv"], 
+                        id: "myVideo_#{question.id}", preload: 'none', loop: true, width: '100%', height: '80%', audio: 'muted') %>
+                </div>  
+            </div>
+
+            <div class="content_bottom"> 
+                <div class="small_circles_content">
+                    <div class="content_of_small_circle">
+                        <div class="small_circle small_circle_1">1</div>
+                        <h2>Have no idea</h2>
+                    </div>
+                    <div class="content_of_small_circle"> 
+                        <div class="small_circle small_circle_2">2</div>
+                        <h2 style="visibility: hidden;">Know for sure</h2>
+                    </div>
+                    <div class="content_of_small_circle">
+                        <div class="small_circle small_circle_3">3</div>
+                        <h2 style="visibility: hidden;">Know for sure</h2>
+                    </div>
+                    <div class="content_of_small_circle">
+                        <div class="small_circle small_circle_4">4</div>
+                        <h2 style="visibility: hidden;">Know for sure </h2>
+                    </div>
+                    <div class="content_of_small_circle">
+                        <div class="small_circle small_circle_5">5</div>
+                        <h2>Know for sure</h2>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <%= render 'svg/powered_by.svg' %>
+            </footer>
+        </div>                
+    </div>
+<% end %>
