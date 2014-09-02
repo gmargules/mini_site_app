@@ -236,10 +236,10 @@ $(window).load(function bababa(){
 });
 
 function play_video(item_number){
-  console.log item_number;
+  console.log(item_number);
 
   video = document.getElementById("myVideo_"+item_number);
-  console.log video;
+  console.log(video);
 
   if(video != null){
     video.addEventListener('loadeddata', function(event) { change_slide_background();} );
