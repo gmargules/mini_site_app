@@ -32,6 +32,9 @@ $(document).ready(function () {
 
 
   $('.first_slide .circle,.first_slide h3').one("click",function(){
+    
+    is_safari = false;
+    BrowserDetection();
     //play first four videos
     console.log("click1"); 
     play_video("1");
@@ -71,8 +74,7 @@ $(document).ready(function () {
     grade_business_readiness = 0;
     grade_tech_readiness = 0;
     grade_design = 0;
-    is_safari = false;
-    BrowserDetection();
+    
     user_version = Math.round(Math.random());
     //console.log(user_version);
     if (user_version == 1){
