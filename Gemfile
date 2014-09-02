@@ -10,6 +10,7 @@ end
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem 'bugsnag'
 gem 'annotate'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
