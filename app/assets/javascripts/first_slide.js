@@ -18,7 +18,10 @@ $(document).ready(function () {
 
 
   $('.first_slide .circle,.first_slide h3').hover(
-         function(){ $('.circle_2').addClass('not_hidden_class') },
+         function(){ 
+          console.log("hover"); 
+          $('.circle_2').addClass('not_hidden_class') 
+        },
          function(){ $('.circle_2').removeClass('not_hidden_class') }
     )
 
@@ -30,11 +33,11 @@ $(document).ready(function () {
 
   $('.first_slide .circle,.first_slide h3').one("click",function(){
     //play first four videos
-
+    console.log("click1"); 
     play_video("1");
     play_video("2");
     play_video("3");
-
+    console.log("click2"); 
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header #banana_svgs');
     var circles_container_array = $('.item').find('header .content_of_header #circle_svgs');
@@ -61,7 +64,7 @@ $(document).ready(function () {
 
       //fit background of next item 
     }
-
+    console.log("click3"); 
     //handle variables hande fade of start button 
     myLastDate = new Date();
     grade_concept = 0;
@@ -86,7 +89,7 @@ $(document).ready(function () {
     $('.circle').css("top",$('.circle').offset().top - circle_relative_size);
     $('.circle').css('left',$('.circle').offset().left - circle_relative_size);
     $('.circle').css("position","absolute");
-    
+    console.log("click4"); 
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
     var max_width_height=Math.max(windowWidth,windowHeight);
