@@ -29,7 +29,7 @@
             <div class="content_center">
                 <div class="content_small" id="video_container_<%=question.id%>">
                     <%= video_tag(["#{question.video_filename}.mp4", "#{question.video_filename}.webm", "#{question.video_filename}.ogv"], 
-                        id: "myVideo_#{question.id}", preload: 'none', loop: true, width: '100%', height: '80%', audio: 'muted', webkit-playsinline: true) %>
+                        id: "myVideo_#{question.id}", preload: 'none', loop: true, width: '100%', height: '80%', audio: 'muted', 'webkit-playsinline') %>
                 </div>  
             </div>
 
