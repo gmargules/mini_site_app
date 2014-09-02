@@ -247,6 +247,9 @@ function play_video(item_number){
     if(!is_safari){
       video.addEventListener('loadeddata', function(event) { change_slide_background();} );
     }
+    else{
+      video.attr('webkit-playsinline', '');
+    }
     video.play();
   }
 }
