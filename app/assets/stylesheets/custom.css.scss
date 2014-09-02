@@ -17,10 +17,10 @@
 }
 
 .texture_image_class_yellow{
-    content: asset_url('yellow_texture.png');
+    content: url('yellow_texture.png');
 }
 .texture_image_class_blue{
-    content: asset_url('blue_texture.png');
+    content: url('blue_texture.png');
 }
 
 html, body{
@@ -348,7 +348,7 @@ html, body{
 
     &.first_slide{
       
-      background-image: url("/assets/banana_texture.svg") !important;
+      background-image: url("banana_texture.svg") !important;
       background-size: 20em !important;
       background-repeat: repeat; 
       background: #40b1a3;
@@ -462,7 +462,7 @@ html, body{
 
     &.last_slide{
 
-      background-image: url("/assets/banana_texture.svg") !important;
+      background-image: url("banana_texture.svg") !important;
       background-size: 20em !important;
       background-repeat: repeat; 
       background: #40b1a3;
