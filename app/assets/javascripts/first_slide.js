@@ -135,11 +135,11 @@ $(document).ready(function () {
         image_animator();        
       }
       else{
-        play_video(question_id+3);
-        pause_video(question_id);
+        //play_video(question_id+3);
+        //pause_video(question_id);
 
         //change background color
-        restart_video(question_id+1);
+        //restart_video(question_id+1);
            
       }
 
