@@ -15,22 +15,6 @@ $(document).ready(function () {
    window.open("http://monkeytech.co.il/", '_blank');
   });
 
-
-
-  $('.first_slide .circle,.first_slide h3').hover(
-         function(){ 
-          console.log("hover"); 
-          $('.circle_2').addClass('not_hidden_class') 
-        },
-         function(){ $('.circle_2').removeClass('not_hidden_class') }
-    )
-
-  $('.small_circle').hover(
-         function(){ $(this).addClass('small_circle_on_hover')},
-         function(){ $(this).removeClass('small_circle_on_hover') }
-    )
-
-
   $('.first_slide .circle,.first_slide h3').one("click",function(){
     
     is_safari = false;
@@ -177,8 +161,22 @@ $(document).ready(function () {
 
 
 
-		}
-	)
+		})
+
+    $('.first_slide .circle,.first_slide h3').hover(
+         function(){ 
+          console.log("hover"); 
+          $('.circle_2').addClass('not_hidden_class') 
+        },
+         function(){ $('.circle_2').removeClass('not_hidden_class') }
+    )
+
+    $('.small_circle').hover(
+         function(){ $(this).addClass('small_circle_on_hover')},
+         function(){ $(this).removeClass('small_circle_on_hover') }
+    )
+
+	
 
 
   $(window).resize(function() {
@@ -189,11 +187,8 @@ $(document).ready(function () {
     //console.log($(window).width()+","+$(window).height());
     var min_width_height=Math.min(windowWidth,windowHeight)/1.9;
     lines_canvas = document.getElementById('my_lines_canvas');
-    calculation_canvas = document.getElementById('calculation_canvas');
     lines_canvas.width = min_width_height*1.9;
-    lines_canvas.height = min_width_height;
-    calculation_canvas.width = lines_canvas.width;
-    calculation_canvas.height = lines_canvas.height;
+    lines_canvas.height = min_width_height; 
     $('.knob1').trigger('configure', {'width':min_width_height, 'height':min_width_height}); 
     $('.knob2').trigger('configure', {'width':min_width_height, 'height':min_width_height}); 
     $('.knob3').trigger('configure', {'width':min_width_height, 'height':min_width_height}); 
@@ -283,41 +278,15 @@ function change_texture(){
 }
 
 function image_animator(){
-
-var canvas=document.getElementById("calculation_canvas");
-var ctx=canvas.getContext("2d");
+  var counter = 0;
+  var calculation_canvas = $('#calculation_images');
+  
   window.requestAnimFrame = (function(callback) {
     return  function(callback) {
       MyImageIntervalVar = window.setTimeout(callback, 10);
     };
   })();
-
-  var imageIndex=0;
-  var animPctComplete=0;
-  var counter = 0;
-  var imageURLs = [];
-  var imagesOK=0;
-  animation_imgs=[];
-
-
-  for(var i=1; i<5; i++){
-    imageURLs[i-1] = "/assets/"+i+".png";
-  }
-  loadAllImages();
-
-  function loadAllImages(callback){
-      for (i = 0; i < imageURLs.length; i++) {
-          var img = new Image();
-          animation_imgs.push(img);
-          img.onload = function(){ 
-              imagesOK++; 
-              if (imagesOK==imageURLs.length ) {
-                  animate();
-              }
-          }; 
-          img.src = imageURLs[i];
-      }      
-  }
+  animate();
 
   function animate() {
     setTimeout(function() {
@@ -325,41 +294,38 @@ var ctx=canvas.getContext("2d");
         requestAnimFrame(animate);
       }
       else{
-        $('#calculation_canvas').css('opacity','0');
-        $('#last_slide_loading_title').hide();
-
-        $('canvas, #my_lines_canvas, footer, section').fadeIn(1000);
-
+        $('#last_slide_loading_title, #calculation_images').hide();
+        //calc_grades();
+        $('canvas, #my_lines_canvas, footer, section').fadeIn(1000);      
         
-        calc_grades();
       }
 
       // get the current image
       // get the xy where the image will be drawn
-      var img=animation_imgs[imageIndex];
+      imageIndex = counter%4+1;
+      div_id = "#calc_monkey_" + imageIndex;
+      image_id = "#calc_monkey_" + imageIndex + " img";
 
-      img.height = canvas.height;
-      var imgX=canvas.width/2-img.height/2;
-      var imgY=canvas.height/2-img.height/2;
+      var img = $(image_id);
+      var img_div = $(div_id);
+      img.css('height', 0.65*parseInt(calculation_canvas.css('height'), 10));
+      img.css('width', img.css('height'));
+      img_div.css('height', img.css('height'));
+      img_div.css('width', img.css('height'));
+      var imgX=parseInt(calculation_canvas.css('width'), 10)/2-parseInt(img.css('width'), 10)/2;
+      var imgY=parseInt(calculation_canvas.css('height'), 10)/2-parseInt(img.css('height'), 10)/2;
+      img_div.css('position', 'absolute');
+      img_div.css('top', imgY);
+      img_div.css('left', imgX);
+      img_div.css('visibility', 'visible');
+
+      //hide last image
+      lastIndex = (counter-1)%4+1;
+      last_image_id = "#calc_monkey_" + lastIndex;
       
-      // set the current opacity
-      //ctx.globalAlpha=animPctComplete;
-
-      // draw the image
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      ctx.drawImage(img,imgX,imgY,img.height,img.height);
-
-      // increment the animationPctComplete for next frame
-      //animPctComplete+=.1;  //100/fps;
-
-      // if the current animation is complete
-      // reset the animation with the next image
-     // if(animPctComplete>=1.00){
-     //     animPctComplete=0.00;
-          counter++;
-          imageIndex = (imageIndex+1)%4;
-     // }
-
+      var last_img = $(last_image_id);
+      last_img.css('visibility', 'hidden');
+      counter++;
     }, 500);
   }
 }
@@ -374,13 +340,10 @@ function change_slide_background(){
     var context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
     context.drawImage(myVideo, 0, 0, 5, 5);
     var pixelData = context.getImageData(0, 0, 5, 5).data;
-    console.log("here1");
     if(!(pixelData[0]=="0" && pixelData[1]=="0" && pixelData[2]=="0")){
-      console.log("here2");
       slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
     }
     if(!(pixelData[0]==0 && pixelData[1]==0 && pixelData[2]==0)){
-      console.log("here3");
       slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
     }
   }
