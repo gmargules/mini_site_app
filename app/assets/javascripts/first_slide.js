@@ -21,9 +21,9 @@ $(document).ready(function () {
     BrowserDetection();
     //play first four videos
     console.log("click1"); 
-    play_video("1");
-    play_video("2");
-    play_video("3");
+  //  play_video("1");
+  //  play_video("2");
+  //  play_video("3");
     console.log("click2"); 
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header #banana_svgs');
