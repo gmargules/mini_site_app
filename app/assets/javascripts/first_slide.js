@@ -19,12 +19,6 @@ $(document).ready(function () {
     
     is_safari = false;
     BrowserDetection();
-    //play first four videos
-    console.log("click1"); 
-  //  play_video("1");
-  //  play_video("2");
-  //  play_video("3");
-    console.log("click2"); 
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header #banana_svgs');
     var circles_container_array = $('.item').find('header .content_of_header #circle_svgs');
@@ -51,7 +45,6 @@ $(document).ready(function () {
 
       //fit background of next item 
     }
-    console.log("click3"); 
     //handle variables hande fade of start button 
     myLastDate = new Date();
     grade_concept = 0;
@@ -60,7 +53,6 @@ $(document).ready(function () {
     grade_design = 0;
     
     user_version = Math.round(Math.random());
-    //console.log(user_version);
     if (user_version == 1){
       $('.item footer').addClass('not_hidden_class');
 
@@ -75,7 +67,6 @@ $(document).ready(function () {
     $('.circle').css("top",$('.circle').offset().top - circle_relative_size);
     $('.circle').css('left',$('.circle').offset().left - circle_relative_size);
     $('.circle').css("position","absolute");
-    console.log("click4"); 
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
     var max_width_height=Math.max(windowWidth,windowHeight);
@@ -134,14 +125,6 @@ $(document).ready(function () {
 
         image_animator();        
       }
-      else{
-        //play_video(question_id+3);
-        //pause_video(question_id);
-
-        //change background color
-        //restart_video(question_id+1);
-           
-      }
 
 			$.ajax({
 			    url : "answer",
@@ -152,22 +135,10 @@ $(document).ready(function () {
       $(this).addClass('small_circle_on_click');
       setTimeout(function(){$('#myCarousel').carousel('next').carousel('pause');}, 100);
       
-      /*
-      $('.circle').animate({ width:max_width_height*2, height:max_width_height*2, top:windowHeight-(Math.sqrt(2)*max_width_height),  left:windowWidth-(Math.sqrt(2)*max_width_height)}, 1000).promise().done(function () {
-      $('#myCarousel').carousel('next');
-      $('#myCarousel').carousel('pause');
-    });
-*/
-
-
-
 		})
 
     $('.first_slide .circle,.first_slide h3').hover(
-         function(){ 
-          console.log("hover"); 
-          $('.circle_2').addClass('not_hidden_class') 
-        },
+         function(){$('.circle_2').addClass('not_hidden_class') },
          function(){ $('.circle_2').removeClass('not_hidden_class') }
     )
 
@@ -184,7 +155,6 @@ $(document).ready(function () {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
 
-    //console.log($(window).width()+","+$(window).height());
     var min_width_height=Math.min(windowWidth,windowHeight)/1.9;
     lines_canvas = document.getElementById('my_lines_canvas');
     lines_canvas.width = min_width_height*1.9;
@@ -217,7 +187,6 @@ $(document).ready(function () {
     $('.last_slide footer svg').css('width',width_after_ratio_last_footer);
     $('.last_slide footer svg').css('left',windowWidth/2-windowHeight*0.05);
     h2_text_position = parseInt($('.last_slide footer svg').css('left'),10) - 1.2* parseInt($('.last_slide footer h2').css('width'),10);
-    console.log(h2_text_position);
     $('.last_slide footer h2').css('left',h2_text_position+'px');
 
     
@@ -249,23 +218,6 @@ function play_video(item_number){
   }
 }
 
-function restart_video(item_number){
-  video = document.getElementById("myVideo_"+item_number);
-  if(video != null){
-    if(video.readyState == 4){//only if video is loaded
-      video.currentTime = 0;
-    }
-  }
-}
-
-function pause_video(item_number){
-  video = document.getElementById("myVideo_"+item_number);
-  if(video != null){
-    //if(video.readyState == 4){//only if video is loaded
-      video.pause();
-    //}
-  }
-}
 
 function change_texture(){
   next_page_backgound_is_yellow = $('.active').next().hasClass('yellow');
@@ -330,25 +282,6 @@ function image_animator(){
       last_img.css('visibility', 'hidden');
       counter++;
     }, 500);
-  }
-}
-
-function change_slide_background(){
-  
-  var video_id=event.target.id;
-  var slide_to_change = $("#"+video_id).closest('.item');
-  var slide_number = $('div.item').index(slide_to_change);
-  var myVideo = document.getElementById("myVideo_"+slide_number);
- if(myVideo != null){
-    var context = document.getElementById("myCanvas_"+slide_number).getContext("2d");
-    context.drawImage(myVideo, 0, 0, 5, 5);
-    var pixelData = context.getImageData(0, 0, 5, 5).data;
-    if(!(pixelData[0]=="0" && pixelData[1]=="0" && pixelData[2]=="0")){
-      slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
-    }
-    if(!(pixelData[0]==0 && pixelData[1]==0 && pixelData[2]==0)){
-      slide_to_change.attr('style', 'background: rgb(' +pixelData[0]+','+pixelData[1]+','+pixelData[2]+') !important');
-    }
   }
 }
 
