@@ -216,6 +216,9 @@ $(document).ready(function () {
     width_after_ratio_last_footer =$(window).height()*0.1; //compensate safari issue
     $('.last_slide footer svg').css('width',width_after_ratio_last_footer);
     $('.last_slide footer svg').css('left',windowWidth/2-windowHeight*0.05);
+    h2_text_position = parseInt($('.last_slide footer svg').css('left'),10) - 1.2* parseInt($('.last_slide footer h2').css('width'),10);
+    console.log(h2_text_position);
+    $('.last_slide footer h2').css('left',h2_text_position+'px');
 
     
     var pos_start_width = Math.round($('#first_slide_circle').offset().left + ($('#first_slide_circle').width())/2-($('#central_container_first_slide h3').width())/2);
@@ -374,7 +377,7 @@ function calc_grades(){
   $('.knob2').attr({"data-angleOffset": final_grade_tech_readiness_arc_size, "data-angleArc": final_grade_design_arc_size});
   $('.knob3').attr({"data-angleOffset": final_grade_tech_readiness_arc_size+final_grade_design_arc_size, "data-angleArc": final_grade_business_readiness_arc_size});
   $('.knob4').attr({"data-angleOffset": final_grade_tech_readiness_arc_size+final_grade_design_arc_size+final_grade_business_readiness_arc_size, "data-angleArc": final_grade_concept_arc_size});
-  
+
   $(".knob2").knob();
   $('.knob3').knob();
   $('.knob4').knob();

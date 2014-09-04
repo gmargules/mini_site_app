@@ -526,6 +526,19 @@ html, body{
           font-size: 4em;
           z-index: 1;
         }
+        a{
+          position: absolute;
+          bottom: 4%;
+          right: 0;
+          width: 8em;
+          color: #21685e !important;
+          font-size: 4em;
+          z-index: 1;
+
+          img{
+            height: 3em;
+          }
+        }
       }
 
       section{
@@ -570,7 +583,7 @@ html, body{
       }
     
       /*background: #54bea3;*/ 
-      background: #40b1a3;  
+      background: #48bea2;  
 
       header, footer {
         address{
@@ -599,7 +612,7 @@ html, body{
       }
       
       /*background: #82343c; */
-      background: #8b3b3b;      
+      background: #84303a;      
 
       header, footer {
         address{
@@ -627,7 +640,7 @@ html, body{
       }
 
       /*background: #dfcb31;*/ 
-      background: #e4c52e;      
+      background: #dfca32;      
 
       header, footer {
         address{
@@ -672,7 +685,7 @@ html, body{
       }
 
       /*background: #255747;*/
-      background: #21685e;      
+      background: #1f5546;      
 
       header, footer {
         address{

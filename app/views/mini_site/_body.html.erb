@@ -28,8 +28,7 @@
 
             <div class="content_center">
                 <div class="content_small" id="video_container_<%=question.id%>">
-                    <img height="390" id="myVideo_<%=question.video_filename%>" width="auto" src="<%=image_path("1.gif")%>">
-                    </img>
+                    <img src="<%=image_path("#{question.video_filename}.gif")%>"id="myVideo_<%=question.video_filename%>" width="auto" height="390">
                 </div>
 <!--
                     <video audio="muted" height="390" id="myVideo_<%=question.video_filename%>" loop="loop" preload="none" width="100%" webkit-playsinline><source src="<%=video_path("#{question.video_filename}.mp4")%>"><source src="<%=video_path("#{question.video_filename}.webm")%>"><source src="<%=video_path("#{question.video_filename}.ogv")%>"></video>
