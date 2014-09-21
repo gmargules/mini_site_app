@@ -174,7 +174,8 @@ $(document).ready(function () {
     for ( var i = 1; i < last_slide_number; i++ ) {
       video = document.getElementById("myVideo_"+i);
       if(video != null){
-        video.height = windowHeight/2.3;
+        video.height = 1.675*windowHeight/2.3>windowWidth? windowWidth/1.675 : windowHeight/2.3;
+        console.log(1.675*windowHeight/2.3>windowWidth);
       }
     }
     
