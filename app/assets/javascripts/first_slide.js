@@ -238,10 +238,12 @@ function correct_last_slide(){
     center_height = 1.1*parseInt($('#my_lines_canvas').css('height'));
     center_height = center_height + 'px' ;
     svg_height = 0.6*parseInt($('.last_slide').find('.content_top h1').css('height'));
+    arrow_height = 0.6*svg_height;
     svg_height = svg_height + 'px';
+    arrow_height = arrow_height + 'px';
     $('.last_slide').find('.content_center').css('height',center_height);
     $('#summary_monkey svg').css('height',svg_height);
-    $('#summary_monkey img').css('height',svg_height);
+    $('#summary_monkey img').css('height',arrow_height);
     share_left= parseInt($(window).width(),10)/2 - parseInt($('.last_slide').find('a').css('width'),10)/2;
     share_left = share_left +'px';
     $('.last_slide').find('a').css('left',share_left);
