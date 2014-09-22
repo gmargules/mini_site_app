@@ -501,42 +501,41 @@ html, body{
       
 
       footer {
-      //  width: 95%;
-      //  height: 10em;
         visibility: visible;
-       // top: -7em;
         z-index: 3;
+        #summary_monkey{
+          padding-top: 10px;
 
-        svg {
-          width: auto;
-          height: 10%;
-          float: right;
-          display: block;
-          margin: auto;
-          bottom: 3%;
-          position: absolute;
+          svg {
+            width: 70px;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            display: inline;
+            position: relative;
+            vertical-align: middle;
+          }
+          img{
+            height: auto;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            display: inline;
+            position: relative;
+          }
         }
-        h2{
-          position: absolute;
-          bottom: 3%;
-          top: auto;
-          left: 3%;
-          width: 8em;
-          color: #21685e !important;
-          font-size: 4em;
-          z-index: 1;
-        }
+        
         a{
           position: absolute;
-          bottom: 4%;
-          right: 0;
           width: 8em;
-          color: #21685e !important;
           font-size: 4em;
-          z-index: 1;
+          bottom: 5px;
 
           img{
-            height: 3em;
+            height: 2em;
           }
         }
       }
