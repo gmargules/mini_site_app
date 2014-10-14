@@ -492,7 +492,7 @@ html, body{
         display: inline-block;
         padding-top: 1em;
         section{
-          padding-top: 40px;
+          padding-top: 10px;
         }
 
       }
@@ -815,6 +815,24 @@ and (min-height: 480px) and (min-width: 400px){
   }
 }
 
+@media only screen and (min-height: 280px){
+  .mini_site .item.last_slide .content_bottom section {
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (min-height: 460px){
+  .mini_site .item.last_slide .content_bottom section {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (min-height: 540px){
+  .mini_site .item.last_slide .content_bottom section {
+    padding-top: 40px;
+  }
+}
+
 @media only screen 
 and (min-height: 570px) and (min-width: 400px){
   html, body{
@@ -824,7 +842,7 @@ and (min-height: 570px) and (min-width: 400px){
 
 
 @media only screen 
-and (min-height: 620px) and (min-width: 520px){
+and (min-height: 660px) and (min-width: 520px){
   html, body{
     font-size: 5px; 
   }
