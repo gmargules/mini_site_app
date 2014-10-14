@@ -521,6 +521,8 @@ html, body{
             vertical-align: middle;
           }
           img{
+            -webkit-animation: rightThenLeft 2s infinite;
+            animation: rightThenLeft 2s infinite;
             height: auto;
             margin: 0;
             padding: 0;
@@ -531,6 +533,9 @@ html, body{
           }
         }
         
+
+
+
         a{
           position: absolute;
           width: 8em;
@@ -879,7 +884,11 @@ and (min-height: 400px) and (min-width: 900px){
 
 
 
-
+@-webkit-keyframes rightThenLeft {
+    0%   {left:5px;}
+    50%  {left:-5px;}
+    100% {left:5px;}
+}
 
 
 
