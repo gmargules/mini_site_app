@@ -811,6 +811,13 @@ and (min-height: 350px) and (min-width: 300px){
 @media only screen 
 and (min-height: 480px) and (min-width: 400px){
   html, body{
+    font-size: 3px; 
+  }
+}
+
+@media only screen 
+and (min-height: 570px) and (min-width: 400px){
+  html, body{
     font-size: 4px; 
   }
 }
