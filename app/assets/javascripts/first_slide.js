@@ -15,10 +15,9 @@ $(document).ready(function () {
    window.open("http://monkeytech.co.il/", '_blank');
   });
 
-  $('.first_slide .circle,.first_slide h3').one("click",function(){
-    
-    is_safari = false;
+  $('.first_slide .circle').one("click",function(){
     BrowserDetection();
+
     //handle bananas header and match background color to video
     var bananas_container_array = $('.item').find('header .content_of_header #banana_svgs');
     var circles_container_array = $('.item').find('header .content_of_header #circle_svgs');
@@ -185,19 +184,10 @@ $(document).ready(function () {
     
 
     width_after_ratio_last_footer =$(window).height()*0.1; //compensate safari issue
+
   });
 
 });
-
-function play_video(item_number){
-  video = document.getElementById("myVideo_"+item_number);
-  if(video != null){
-    if(!is_safari){
-      video.addEventListener('loadeddata', function(event) { change_slide_background();} );
-    }
-    video.play();
-  }
-}
 
 
 function change_texture(){
@@ -433,10 +423,8 @@ function BrowserDetection(){
   }
   //Check if browser is Safari or not
   else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-    is_safari = true;
   }
   //Check if browser is Opera or not
   else if (navigator.userAgent.search("Opera") >= 0) {
-
   }
 }
