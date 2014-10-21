@@ -370,12 +370,14 @@ html, body{
           //line-height: 0.2em;
           color: #e4c52e ;
           text-shadow: -0.05em -0.02em #2f8376; 
-          position: absolute;   
+          //position: absolute;   
           z-index:3;
           margin: 0;
           top: 1.5em;
+          line-height: 3.87em;
           display: inline-block;
           cursor: pointer;
+          display: inline-block;
         }
 
       .circle {
@@ -386,6 +388,7 @@ html, body{
         display: inline-block;
         margin: 2em;
         cursor: pointer; 
+        text-align: center;
       }
 
       .circle_2 {
