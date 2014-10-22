@@ -19,8 +19,8 @@ $(document).ready(function () {
     BrowserDetection();
 
     //handle bananas header and match background color to video
-    var bananas_container_array = $('.item').find('header .content_of_header #banana_svgs');
-    var circles_container_array = $('.item').find('header .content_of_header #circle_svgs');
+    var bananas_container_array = $('.item').find('header .content_of_header .banana_svgs');
+    var circles_container_array = $('.item').find('header .content_of_header .circle_svgs');
     
     var banana_item = bananas_container_array.eq(0).find('#banana_svg_0_0');
     var circle_item = circles_container_array.eq(0).find('#circle_svg_0_0');

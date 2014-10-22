@@ -279,7 +279,7 @@ html, body{
 
       }
 
-      #banana_svgs {
+      .banana_svgs {
         display: none;
         width: 90%;
         top: 1em;
@@ -288,7 +288,7 @@ html, body{
         }
       }
 
-      #circle_svgs {
+      .circle_svgs {
         display: inline-block;
         width: 100%;
         svg{
@@ -893,11 +893,11 @@ and (min-height: 400px) and (min-width: 900px){
     .content_of_header {
       
       
-      #banana_svgs {
+      .banana_svgs {
           display: inline-block !important;
         }
 
-      #circle_svgs {
+      .circle_svgs {
         display: none !important;
       }
 
