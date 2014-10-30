@@ -1,7 +1,7 @@
 <% questions.each_with_index do |question,i| %>   
     <div class="item <%=question.style%>" data-grade_type="<%= question.grade_type %>" data-weight="<%= question.weight %>">            	
     	<div class="content_large">
-            <header id="bananas_header">
+            <header>
                 <div class="content_of_header">
                     <div class="content_page_number">
                         <address><%= i + 1 %>/30</address>
