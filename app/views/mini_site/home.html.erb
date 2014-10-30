@@ -1,11 +1,15 @@
 <!-- left background texture -->
-<div class="texture_div"><img class="texture_image_class_yellow" id="myTexture"></div>
+<div class="texture_div">
+	<img class="texture_image_class_yellow" id="myTexture" src="" alt="">
+</div>
+
 <!-- store the user's id for later use -->
 <div id="data_container" data-user_id=""></div>
+
 <div id="myCarousel" class="carousel mini_site" data-interval="false" data-ride="carousel" style="width:100%; height:100%; position:absolute; left:0;top:0;overflow:hidden;">
-	<div class="carousel-inner">
-		<%= render 'intro' %>
-		<%= render partial: 'body', locals: { questions: @questions } %>
-		<%= render 'summary' %>
-	</div>
+    <div class="carousel-inner">
+        <%= render 'intro' %>
+        <%= render partial: 'body', locals: { questions: @questions } %>
+        <%= render 'summary' %>
+    </div>
 </div>
