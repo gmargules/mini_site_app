@@ -9,7 +9,7 @@
                     
                     <div class="content_medium banana_svgs">
                         <svg id="banana_svg_<%= i %>_0">                        
-                            
+                            <%= render 'mini_site/svg/banana.svg' %>
                         </svg>
                     </div> 
 
@@ -28,7 +28,7 @@
 
             <div class="content_center">
                 <div class="content_small" id="video_container_<%=question.id%>">
-                    <img src="<%=image_path("#{question.video_filename}.gif")%>" id="myVideo_<%=question.video_filename%>">
+                    <img src="<%=image_path("#{question.video_filename}.gif")%>" id="myVideo_<%=question.video_filename%>" alt="question video">
                 </div>                  
             </div>
 
@@ -60,7 +60,7 @@
             </div>
 
             <footer>
-                
+                <%= render 'mini_site/svg/powered_by.svg' %>
             </footer>
         </div>                
     </div>
