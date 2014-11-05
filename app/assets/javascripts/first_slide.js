@@ -25,8 +25,9 @@ $(document).ready(function () {
     var banana_item = bananas_container_array.eq(0).find('#banana_svg_0_0');
     var circle_item = circles_container_array.eq(0).find('#circle_svg_0_0');
     var i, context, pixelData, number, video, bananas_container, circles_container, banana_returned_item, circle_returned_item;
-    console.log($('div.item').index($('div.item').last()[0])-1);
-    for (number = 0; number<$('div.item').index($('div.item').last()[0])-1;number++){
+
+    var number_of_slides = $('div.item').index($('div.item').last()[0])-1
+    for (number = 0; number<number_of_slides;number++){
       bananas_container = bananas_container_array.eq(number);
       circles_container = circles_container_array.eq(number);
       
@@ -35,7 +36,7 @@ $(document).ready(function () {
        circle_item.clone().attr('id', "circle_svg_"+number+"_"+i).appendTo(circles_container);
       }
       
-      for (i = number+1; i < 20; i++ ) {
+      for (i = number+1; i < number_of_slides; i++ ) {
         banana_returned_item = banana_item.clone().attr('id', "banana_svg_"+number+"_"+i).appendTo(bananas_container);
         banana_returned_item.css("opacity",'0.5');
         circle_returned_item = circle_item.clone().attr('id', "circle_svg_"+number+"_"+i).appendTo(circles_container);
@@ -110,10 +111,10 @@ $(document).ready(function () {
 
       //Checking grades
       
-      console.log("concept = " + grade_concept);
-      console.log("business = " + grade_business_readiness);
-      console.log("tech = " + grade_tech_readiness);
-      console.log("design = " + grade_design);
+      //console.log("concept = " + grade_concept);
+      //console.log("business = " + grade_business_readiness);
+      //console.log("tech = " + grade_tech_readiness);
+      //console.log("design = " + grade_design);
       
       if ( $('div.item').last().is($('div.active').next())){
 
@@ -278,10 +279,10 @@ function calc_grades(){
 
 
   //calculate seprate grades
-  final_grade_concept = Math.round(100*grade_concept / 50);//64
-  final_grade_business_readiness = Math.round(100*grade_business_readiness / 70);//102.5
-  final_grade_tech_readiness = Math.round(100*grade_tech_readiness / 45);//52.5
-  final_grade_design = Math.round(100*grade_design / 20);//27.5
+  final_grade_concept = Math.round(100*grade_concept / 30);
+  final_grade_business_readiness = Math.round(100*grade_business_readiness / 50);
+  final_grade_tech_readiness = Math.round(100*grade_tech_readiness / 30);
+  final_grade_design = Math.round(100*grade_design / 15);
   
  
   total_ring_weight = final_grade_concept + final_grade_business_readiness + final_grade_tech_readiness + final_grade_design;
