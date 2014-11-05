@@ -107,6 +107,7 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
+    newrelic_rpm (3.9.6.257)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.0.0)
@@ -204,6 +205,7 @@ DEPENDENCIES
   devise
   jbuilder (= 1.0.2)
   jquery-rails
+  newrelic_rpm
   pg
   rails
   rails_12factor (= 0.0.2)
