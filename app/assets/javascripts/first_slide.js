@@ -25,7 +25,7 @@ $(document).ready(function () {
     var banana_item = bananas_container_array.eq(0).find('#banana_svg_0_0');
     var circle_item = circles_container_array.eq(0).find('#circle_svg_0_0');
     var i, context, pixelData, number, video, bananas_container, circles_container, banana_returned_item, circle_returned_item;
-
+    console.log($('div.item').index($('div.item').last()[0])-1);
     for (number = 0; number<$('div.item').index($('div.item').last()[0])-1;number++){
       bananas_container = bananas_container_array.eq(number);
       circles_container = circles_container_array.eq(number);
@@ -35,7 +35,7 @@ $(document).ready(function () {
        circle_item.clone().attr('id', "circle_svg_"+number+"_"+i).appendTo(circles_container);
       }
       
-      for (i = number+1; i < 30; i++ ) {
+      for (i = number+1; i < 20; i++ ) {
         banana_returned_item = banana_item.clone().attr('id', "banana_svg_"+number+"_"+i).appendTo(bananas_container);
         banana_returned_item.css("opacity",'0.5');
         circle_returned_item = circle_item.clone().attr('id', "circle_svg_"+number+"_"+i).appendTo(circles_container);
