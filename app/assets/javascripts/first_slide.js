@@ -110,10 +110,10 @@ $(document).ready(function () {
 
       //Checking grades
       
-      //console.log(grade_concept);
-      //console.log(grade_business_readiness);
-      //console.log(grade_tech_readiness);
-      //console.log(grade_design);
+      console.log("concept = " + grade_concept);
+      console.log("business = " + grade_business_readiness);
+      console.log("tech = " + grade_tech_readiness);
+      console.log("design = " + grade_design);
       
       if ( $('div.item').last().is($('div.active').next())){
 
