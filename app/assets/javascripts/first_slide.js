@@ -170,14 +170,14 @@ $(document).ready(function () {
     if(page_id == last_page){
       drawShape();
     }
-
-    console.log(number_of_slides+1);
-    for ( var i = 1; i < number_of_slides+1; i++ ) {
-      video = document.getElementById("myVideo_"+i);
+    var videos = $('div.item').find('.content_small').find('img');
+    videos.each(function(entry) {
+      video = document.getElementById(videos[entry].id);
       if(video != null){
         video.height = 1.675*windowHeight/2.3>windowWidth? windowWidth/1.675 : windowHeight/2.3;
       }
-    }
+
+    });
     
     width_after_ratio_footer =8.389513108614233*($(window).height())*0.03; //compensate safari issue
     $('footer svg').not('#summary_monkey svg').css('width',width_after_ratio_footer);
