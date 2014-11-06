@@ -27,6 +27,7 @@ $(document).ready(function () {
     var i, context, pixelData, number, video, bananas_container, circles_container, banana_returned_item, circle_returned_item;
 
     var number_of_slides = $('div.item').index($('div.item').last()[0])-1
+    console.log(number_of_slides);
     for (number = 0; number<number_of_slides;number++){
       bananas_container = bananas_container_array.eq(number);
       circles_container = circles_container_array.eq(number);
