@@ -11,6 +11,7 @@ $.fn.textWidth = function(){
 
 
 $(document).ready(function () {
+  number_of_slides = $('div.item').index($('div.item').last()[0])-1;
   $('footer svg').click(function() {
    window.open("http://monkeytech.co.il/", '_blank');
   });
@@ -84,7 +85,7 @@ $(document).ready(function () {
 		 	var myNewDate = new Date();
 		 	var response_duration = myNewDate-myLastDate;
 		 	myLastDate = myNewDate;
-  		var question_id = $('div.item').index($('div.active')[0]);
+  		var question_id = $('.active').attr('data-question_id');
   		var response_value = $(this).text();
   		var user_id = $('#data_container').attr('data-user_id');
 		  var params = {user_version:user_version, question_id:question_id, response_value:response_value, user_id:user_id, response_duration:response_duration};			
@@ -170,8 +171,8 @@ $(document).ready(function () {
       drawShape();
     }
 
-    var last_slide_number = $('div.item').index($('div.item').last()[0]);
-    for ( var i = 1; i < last_slide_number; i++ ) {
+    console.log(number_of_slides+1);
+    for ( var i = 1; i < number_of_slides+1; i++ ) {
       video = document.getElementById("myVideo_"+i);
       if(video != null){
         video.height = 1.675*windowHeight/2.3>windowWidth? windowWidth/1.675 : windowHeight/2.3;
@@ -416,8 +417,7 @@ function BrowserDetection(){
   }
   //Check if browser is Firefox or not
   else if (navigator.userAgent.search("Firefox") >= 0) {
-    var last_slide_number = $('div.item').index($('div.item').last()[0]);
-    for ( var i = 1; i < last_slide_number; i++ ) {
+    for ( var i = 1; i < number_of_slides+1; i++ ) {
       $("#video_container_"+i).css('top',"-2em");
     }
 

@@ -1,5 +1,5 @@
 <% questions.each_with_index do |question,i| %>   
-    <div class="item <%=question.style%>" data-grade_type="<%= question.grade_type %>" data-weight="<%= question.weight %>">            	
+    <div class="item <%=question.style%>" data-question_id="<%= question.id %>" data-grade_type="<%= question.grade_type %>" data-weight="<%= question.weight %>">            	
     	<div class="content_large">
             <header>
                 <div class="content_of_header">
